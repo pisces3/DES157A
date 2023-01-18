@@ -1,0 +1,103 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%);
+    color: white;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(180deg, #753D1A 0%, #42230F 100%);
+    display: flex;
+    padding: 40px 110px;
+    gap: 25px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#headerText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#headerText h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#headerText h1 {
+    font-size: 56px;
+}
+
+#headerText h3 {
+    font-size: 14px;
+    color: #B3B3B3;
+    font-weight: 500;
+}
+
+.description {
+    display: flex;
+    gap: 32px;
+}
+
+/* Main Styles */
+main {
+    display: flex;
+    gap: 90px;
+    padding: 40px 110px;
+}
+
+.columns {
+    display: block;
+    background: #121212;
+    border-radius: 10px;
+    padding: 25px;
+    margin: auto;
+
+    width: 269px;
+    height: 368px;
+}
+
+.columns nav ul li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.columns nav ul li a {
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.musicIcons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #868686;
+}
+
+.fas.fa-play-circle {
+    font-size: 60px;
+    color: #65D46E;
+}
+
+/* Footer styles */
+footer {
+    background: #65D46E;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 346px;
+    color: black;
+    justify-content: center;
+    padding: 20px;
+}
