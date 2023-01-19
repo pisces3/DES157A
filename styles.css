@@ -6,13 +6,21 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%);
+    /* background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%); */
     color: white;
+    background: white;
+
+    max-width: 1200px;
+    min-width: 900px;
+    margin: auto;
 }
 
 /* Header Styles */
-header {
+#banner {
+    width: 1100px;
+    height: 250px;
     background: linear-gradient(180deg, #753D1A 0%, #42230F 100%);
+    
     display: flex;
     padding: 40px 110px;
     gap: 25px;
@@ -45,10 +53,46 @@ header {
     gap: 32px;
 }
 
+/* Vinyl Animation */
+
+#animateVinyl {
+    position: relative;
+}
+
+#animateVinyl:hover {
+    cursor:pointer;
+}
+
+#vinylPlayer {
+    transition: all 1s;
+}
+
+#vinylCover {
+    position: absolute;
+    left:0;
+    transition: all 1s;
+}
+
+#vinylCover:hover {
+    cursor: pointer;
+    left:-7em;
+}
+
+
+
+#vinylCover:hover #vinylPlayer{
+    opacity: 1;
+    left: 50px;
+}
+
+
+
+
+
 /* Main Styles */
 main {
     display: flex;
-    gap: 90px;
+    gap: 10px;
     padding: 40px 110px;
 }
 
@@ -56,11 +100,15 @@ main {
     display: block;
     background: #121212;
     border-radius: 10px;
+    /* padding: 25px;
+    margin: auto; */
+    flex: 1;
+    margin: 10px;
     padding: 25px;
-    margin: auto;
 
-    width: 269px;
-    height: 368px;
+    /* width: 269px;
+    min-height: 368px; */
+    position: relative;
 }
 
 .columns nav ul li {
@@ -76,18 +124,24 @@ main {
     font-weight: 300;
 }
 
+.columns h2 {
+    margin-bottom: 5px;
+}
+
 .musicIcons {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    
     font-size: 25px;
     color: #868686;
+    text-align: center;
+
 }
 
 .fas.fa-play-circle {
     font-size: 60px;
     color: #65D46E;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Footer styles */
