@@ -6,9 +6,9 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%);
+    /* background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%); */
     color: white;
-    /* background: white; */
+    background: white;
 
     max-width: 1200px;
     min-width: 900px;
