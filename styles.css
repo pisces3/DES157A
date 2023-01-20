@@ -6,32 +6,40 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    /* background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%); */
+    background: linear-gradient(180deg, #2D190C 35.33%, #121212 100%);
     color: white;
-    background: white;
+    /* background: white; */
 
     max-width: 1200px;
     min-width: 900px;
     margin: auto;
+    height: 100%;
 }
 
 /* Header Styles */
+
+header {
+    background: linear-gradient(180deg, #753D1A 0%, #42230F 100%);
+    padding: 10px;
+
+}
 #banner {
     width: 1100px;
     height: 250px;
-    background: linear-gradient(180deg, #753D1A 0%, #42230F 100%);
+    /* background: linear-gradient(180deg, #753D1A 0%, #42230F 100%); */
     
     display: flex;
-    padding: 40px 110px;
+    /* padding: 40px 110px; */
     gap: 25px;
     align-items: flex-end;
     justify-content: center;
+    /* margin: auto; */
 }
 
 #headerText {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 }
 #headerText h2 {
     font-size: 16px;
@@ -40,6 +48,8 @@ body {
 
 #headerText h1 {
     font-size: 56px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #headerText h3 {
@@ -54,7 +64,6 @@ body {
 }
 
 /* Vinyl Animation */
-
 #animateVinyl {
     position: relative;
 }
@@ -78,22 +87,17 @@ body {
     left:-7em;
 }
 
-
-
 #vinylCover:hover #vinylPlayer{
     opacity: 1;
     left: 50px;
 }
 
 
-
-
-
 /* Main Styles */
 main {
     display: flex;
     gap: 10px;
-    padding: 40px 110px;
+    padding: 10px 110px;
 }
 
 .columns {
@@ -108,7 +112,12 @@ main {
 
     /* width: 269px;
     min-height: 368px; */
+
+    /* width: 200px;
+    height: 300px; */
     position: relative;
+
+    transform: scale(0.90);
 }
 
 .columns nav ul li {
@@ -135,6 +144,10 @@ main {
     color: #868686;
     text-align: center;
 
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    right: 5px;
 }
 
 .fas.fa-play-circle {
@@ -142,6 +155,33 @@ main {
     color: #65D46E;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* Hover over columns animation */
+.columns:hover {
+    transition: all 1s ease;
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+/* Infinite Playing Vinyl Animation */
+#playingVinyl {
+    display: block;
+    max-height: 75%;
+    width: auto;
+    margin: auto;
+    margin-bottom: 5px;
+
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Footer styles */
@@ -153,5 +193,5 @@ footer {
     gap: 346px;
     color: black;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
 }
