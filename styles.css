@@ -97,6 +97,7 @@ header {
 #vinylCover:hover {
     cursor: pointer;
     left:-7em;
+    transform: rotate(-3deg);
 }
 
 #vinylCover:hover #vinylPlayer{
