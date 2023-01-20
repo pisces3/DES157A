@@ -15,11 +15,9 @@ body {
 }
 
 /* Header Styles */
-
 header {
-    /* background: linear-gradient(180deg, #753D1A 0%, #42230F 100%); */
     padding: 10px;
-    animation: gradientBackground 5s infinite alternate;
+    animation: gradientBackground 7s infinite alternate;
 }
 
 @keyframes gradientBackground {
@@ -30,7 +28,7 @@ header {
         background: #753D1A;
     }
     50% {
-        background: #976546;
+        background: #483020;
     }
     75% {
         background: #42230F;
@@ -119,9 +117,7 @@ main {
     border-radius: 10px;
 
     flex: 1;
-    /* margin: 10px; */
     padding: 15px;
-    /* position: relative; */
 
     transform: scale(0.85);
     transition: all 0.8s ease;
@@ -130,6 +126,7 @@ main {
 .columns nav ul li {
     list-style-type: none;
     padding: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .columns nav ul li a {
@@ -140,11 +137,6 @@ main {
     font-weight: 500;
 }
 
-li:hover {
-    background-color: white;
-    cursor: pointer;
-}
-
 .columns h2 {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -152,7 +144,6 @@ li:hover {
 }
 
 .musicIcons {
-    /* display: block; */
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -222,15 +213,22 @@ li:hover {
     color:  #121212;
 }
 
+li:hover {
+    background-color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 
 /* Infinite Playing Vinyl Animation */
 #playingVinyl {
     display: block;
-    max-height: 75%;
     margin: auto;
-    margin-bottom: 5px;
+    width: 55%;
+    height: auto;
+    padding: 25px;
 
-    animation: rotate 1s linear infinite;
+    animation: rotate 2.5s linear infinite;
 }
 
 @keyframes rotate {
