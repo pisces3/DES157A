@@ -13,7 +13,7 @@
 
     <script>
         // Prompt the user for a color that the computer is "thinking of" - either red, yellow, green, or blue. Then pick a random color from an array. If the color entered by the user matches the color picked by the program, it displays the output message "You are right!". Otherwise, it displays "Try again!". (Credit: Krithika Govind)
-        // If it's right, the h1 text is changed to the computer color. If wrong, it's changed to green
+        // If it's right, the h1 text is changed to the color the computer chose. If wrong, it's changed to red
 
         //random color generator that the computer is thinking of
         function colorPicker(colorArray) {
@@ -31,12 +31,12 @@
                 textColor.style.color = computerColor;
                 result.innerHTML = "You are right!";
             } else {
-                textColor.style.color = 'green';
+                textColor.style.color = 'red';
                 result.innerHTML = "Try again ;(";
             }
         }
         var userColor = prompt("What color is the computer thinking of?", "");
-        var colorArray = ["red", "yellow", "purple", "blue"];
+        var colorArray = ["green", "yellow", "purple", "blue"];
         var colorChosen = colorPicker(colorArray);
         validateColor(colorChosen, userColor);
     </script>
