@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1 id="title">Experiment 2</h1>
+    <h2>What is the result?</h2>
+    <h3 id="result">Result</h3>
+
+    <script>
+        // Prompt the user for a color that the computer is "thinking of" - either red, yellow, green, or blue. Then pick a random color from an array. If the color entered by the user matches the color picked by the program, it displays the output message "You are right!". Otherwise, it displays "Try again!". (Credit: Krithika Govind)
+        // If it's right, the h1 text is changed to the computer color. If wrong, it's changed to green
+
+        //random color generator that the computer is thinking of
+        function colorPicker(colorArray) {
+            var randomIndex = Math.floor(Math.random() * colorArray.length);
+            var computerColor = colorArray[randomIndex];
+            return computerColor;
+        }
+
+        function validateColor(computerColor, userColor) {
+            var result = document.getElementById('result');
+            var textColor = document.getElementById('title');
+
+
+            if (userColor == computerColor) {
+                textColor.style.color = computerColor;
+                result.innerHTML = "You are right!";
+            } else {
+                textColor.style.color = 'green';
+                result.innerHTML = "Try again ;(";
+            }
+        }
+        var userColor = prompt("What color is the computer thinking of?", "");
+        var colorArray = ["red", "yellow", "purple", "blue"];
+        var colorChosen = colorPicker(colorArray);
+        validateColor(colorChosen, userColor);
+    </script>
+    
+</body>
+</html>
