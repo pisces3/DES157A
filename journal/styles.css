@@ -16,6 +16,7 @@ body {
     box-sizing: border-box;
     border-top: none;
     border: 1px solid #303336;
+
 }
 
 /* Header Styles */
@@ -23,37 +24,52 @@ header {
     display: flex;
     align-items: center;
     padding: 16px 20px;
-    gap: 16px;
+    gap: 20px;
     background-color: #212327;
     border-radius: 20px;
     margin-top: 20px;
 
-    width: 500px;
-    margin: auto;
+    width: 60%;
+    margin: 20px auto;
+    
 }
 
 .fas.fa-search {
     font-size: 25px;
 }
 
+h1 {
+    margin: 0;
+}
+
+#bottom-line {
+    box-sizing: border-box;
+    border-top: none;
+    border: 0.5px solid #303336;
+}
+
 /* Main styles */
 main {
     display: block;
-    padding: 64px;
-    margin-top: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 75%;
     
 }
 
-h2, h3, p {
+h2, h3, p{
     margin-bottom: 16px;
 }
 
 h2 {
     font-size: 32px;
+    color:#4A99E9;
 }
 
 h3 {
     font-weight: 400;
+    margin-top: 16px;
+    font-size: 16px;
 }
 
 a {
@@ -62,9 +78,19 @@ a {
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 16px;
+    line-height: 1.8em;
 }
 
+time {
+    color: #C0C5C9;
+}
+
+footer {
+    margin: auto;
+    text-align: center;
+    background: #4A99E9;
+    padding: 4px 16px;
+}
 
 
