@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaLib</title>
+</head>
+<body>
+    <section id="landing-page">
+        <header>
+            <h1>Welcome to </h1>
+            <img src="images/InstaLibLogo.png" alt="InstaLib Logo">
+        </header>
+    
+        <button type="button">Create New Post</button>
+        <!-- add event listener in js to move on to input page -->
+    </section>
+
+    <section id="input-page">
+        <h3>Create new post</h3>
+        <section class="main-field">
+            <section class="photo-field">
+                <h2>Generating a random photo</h2>
+            </section>
+    
+            <form method="POST" action="processor.php">
+                <!-- Enter Name -->
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="Bob">
+       
+                <!-- Enter Friend's Name -->
+                <label for="fname">Friend's Name</label>
+                <input type="text" name="fname" id="fname" value="Tom">
+       
+                <!-- Enter Expression -->
+                <label for="expression">Expression</label>
+                <input type="text" name="expression" id="expression" value="OMG">
+       
+                <!-- Enter Celebrity -->
+                <label for="celebrity">Celebrity</label>
+                <input type="text" name="celebrity" id="celebrity" value="Tom Holland">
+       
+                <!-- Enter Location -->
+                <label for="location">Celebrity</label>
+                <input type="text" name="location" id="location" value="Switzerland">
+       
+                <!-- Enter Adjective -->
+                <label for="adjective">Adjective</label>
+                <input type="text" name="adjective" id="adjective" value="amazing">
+       
+                <!-- Enter Song Lyric -->
+                <label for="songLyric">Song Lyric</label>
+                <input type="text" name="songLyric" id="songLyric" value="oh my god">
+    
+                <!-- Enter Action Verb -->
+                <label for="actionVerb">Action Verb</label>
+                <input type="text" name="actionVerb" id="actionVerb" value="playing">
+    
+                <!-- Submit Button -->
+                <input type="submit" name="send" value="Send this Form!">
+    
+            </form>
+        </section>
+        
+
+    </section>
+
+    <section id="output-page">
+
+    </section>
+    
+
+           
+</body>
+</html>
