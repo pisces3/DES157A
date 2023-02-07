@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #131313;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+
+    max-width: 1200px;
+    min-width: 900px;
+    margin: auto;
+    height: 100%;
+}
+
+footer {
+    background: #B63A9B;
+    
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Header / Landing page */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+    /* position: relative; */
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 64px;
+    margin-bottom: -5px;
+    text-align: center;
+
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+}
+
+button {
+    display: block;
+    margin: auto;
+    background: #262626;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    border: none;
+}
+
+/* Input page */
+#input-page {
+    /* display: none; */
+    background: #262626;
+    border-radius: 20px;
+    max-width: 75%;
+    margin: auto;
+    margin-top: 50px;
+
+    position: relative;
+}
+
+form {
+    display: block;
+    position: absolute;
+    right: 140px;
+}
+
+
+label, input {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+    border: 1px solid #686868;
+    border-radius: 5px;
+    background: #262626;
+    padding: 5px;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border:1px solid #D6D9DC;
+    outline: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+}
+
+input[type="submit"] {
+    color: white;
+    background: #4193EF;
+    border-radius: 10px;
+}
+
+
+fieldset input, fieldset label {
+    display: inline;
+
+}
+
+fieldset label {
+    margin-bottom: 10px;
+}
+
+
+#input-page h3{
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 20px;
+}
+
+.main-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    left: 100px;
+    /* padding-right: 100px; */
+}
+
+.photo-field h2 {
+    text-align: center;
+    font-weight: 400;
+}
+
+#input-page div {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    height: 530px;
+}
+
+.fas.fa-images {
+    display: block;
+    font-size: 100px;
+}
+
+
+
+
