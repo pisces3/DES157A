@@ -61,7 +61,7 @@ button {
 }
 
 /* Input page */
-#input-page {
+#input-page, #output-page{
     /* display: none; */
     background: #262626;
     border-radius: 20px;
@@ -128,7 +128,7 @@ fieldset label {
     align-items: center;
 }
 
-.photo-field {
+#input-page .photo-field {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,5 +154,17 @@ fieldset label {
 }
 
 
-
+/* Output Page */
+.text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.text div{
+    border-radius: 50%;
+    background: #D9D9D9;
+    height: 20px;
+    width: 20px;
+    display: inline-block
+}
 
