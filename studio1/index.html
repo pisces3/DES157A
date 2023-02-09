@@ -27,14 +27,14 @@
     <title>InstaLib</title>
 </head>
 <body>
-    <header>
+    <header class="showing">
         <h1>Welcome to </h1>
         <img src="images/InstaLibLogo.png" alt="InstaLib Logo">
-        <button type="button">Create New Post</button>
+        <button type="button" id="createPost">Create New Post</button>
     </header>
     
 
-    <section id="input-page">
+    <section id="input-page" class="hidden">
         <h3>Create new post</h3>
         <section class="main-field">
             
@@ -42,10 +42,8 @@
                 <i class="fas fa-images"></i>                
                 <h2>Generating a random photo</h2>
             </section>
-
-            <div></div>
     
-            <form method="POST" action="processor.php">
+            <form method="POST" action="processor.php"> 
 
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Bob">
@@ -78,7 +76,7 @@
 
     </section>
 
-    <section id="output-page">
+    <section id="output-page" class="hidden">
         <section class="main-field">
 
             <section class="photo-field">
@@ -91,8 +89,8 @@
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p>@name</p>
-                            <p>location</p>
+                            <p class="nameOut">@name</p>
+                            <p id="locationOut">location</p>
                         </section>
                     </section>
                 </section>
@@ -102,25 +100,25 @@
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p>@name</p>
-                            <p>Currently [action verb] about life</p>
-                            <p>#songlyric</p>
+                            <p class="nameOut">@name</p>
+                            <p id="verbOut">Currently [action verb] about life</p>
+                            <p id="lyricOut">#songlyric</p>
                         </section>
                     </section>
 
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p>@friends-name</p>
-                            <p>[EXPRESSION]!</p>
+                            <p id="friendOut">@friends-name</p>
+                            <p id="expOut">[EXPRESSION]!</p>
                         </section>
                     </section>
 
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p>@celebrity</p>
-                            <p>You're doing [adjective] sweetie </p>
+                            <p class="celebOut">@celebrity</p>
+                            <p id="adjOut">You're doing [adjective] sweetie </p>
                         </section>
                     </section>
                 </section>

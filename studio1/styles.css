@@ -33,6 +33,11 @@ header {
     justify-content: center;
     align-items: center;
 
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
     /* position: relative; */
 }
 
@@ -51,7 +56,6 @@ img {
 }
 
 button {
-    display: block;
     margin: auto;
     background: #262626;
     border-radius: 20px;
@@ -70,12 +74,17 @@ button {
     margin-top: 50px;
 
     position: relative;
+    height: 600px;
 }
 
-form {
+form, #ig-caption{
     display: block;
     position: absolute;
-    right: 140px;
+    left: 60%;
+    top: 3%;
+    border-left: 1px solid #565656;
+    padding-left: 50px;
+    padding-top: 10px;
 }
 
 
@@ -103,6 +112,8 @@ input[type="submit"] {
     color: white;
     background: #4193EF;
     border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 
@@ -123,9 +134,11 @@ fieldset label {
 }
 
 .main-field {
-    display: flex;
+    display: block;
+    position: relative;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 #input-page .photo-field {
@@ -134,8 +147,10 @@ fieldset label {
     align-items: center;
     gap: 20px;
     position: absolute;
-    left: 100px;
-    /* padding-right: 100px; */
+    left: 25%;
+
+    top: 50%;
+    transform: translate(-50%, 80%);
 }
 
 #input-page .photo-field h2 {
@@ -143,15 +158,33 @@ fieldset label {
     font-weight: 400;
 }
 
-#input-page div {
+/* #input-page div {
     border: 1px solid rgba(255, 255, 255, 0.22);
-    height: 530px;
-}
+    border-radius: 0px 0px 20px 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+/* .line {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    width: 50px;
+    
+    position: absolute;
+    left: 586px;
+    top: 184px;
+
+} */
 
 .fas.fa-images {
     display: block;
     font-size: 100px;
 }
+
+/* #output-page {
+    display: none;
+} */
+
 
 
 /* Output Page */
@@ -160,11 +193,32 @@ fieldset label {
     align-items: center;
     gap: 5px;
 }
-.text div{
+/* .text div{
     border-radius: 50%;
     background: #D9D9D9;
     height: 20px;
     width: 20px;
     display: inline-block
+} */
+
+#output-page img {
+    max-width: 25%;
 }
 
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* #output-page {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+} */
