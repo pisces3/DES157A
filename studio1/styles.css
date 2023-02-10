@@ -69,6 +69,13 @@ header button {
 
 }
 
+button:hover, #share:hover, #input-page button:hover{
+    cursor:pointer;
+    background: linear-gradient(180deg, #C11D89 0%, rgba(146, 202, 255, 0.88) 100%);
+    /* transition: 1s ease-in; */
+    /* transform: scale(1.1); */
+}
+
 #input-page, #output-page{
     background: #262626;
     border-radius: 20px;
@@ -147,6 +154,7 @@ input {
     background: #262626;
     padding: 5px;
     width: 225px;
+    color: white;
 }
 
 input[type="text"]:focus {
@@ -154,6 +162,8 @@ input[type="text"]:focus {
     outline: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: white;
+    color: black;
+    transition: 0.8s ease;
 }
 
 #input-page button, #share {
@@ -213,7 +223,7 @@ fieldset label {
 
     position: absolute;
     left: 30%;
-    top: 20%;
+    top: 30%;
     transform: translate(-50%, 50%);
 }
 
@@ -228,7 +238,23 @@ fieldset label {
     font-size: 150px;
 }
 
+.load {
+    border: 14px solid  #f3f3f3;
+    border-top: 14px solid #B63A9B;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /* Output Page */
 .text {

@@ -23,10 +23,13 @@
 
     const imgArray = [img1, img2, img3, img4, img5, img6];
     const img = document.querySelector("#output-img");
-        
 
-    myForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+    function generateRandomImg(imgArray) {
+        let randomIndex = Math.floor(Math.random() * imgArray.length);
+        img.setAttribute("src", imgArray[randomIndex]);
+    };
+
+    function submitForm() {
         const name = document.querySelector("#name").value;
         const friendName = document.querySelector("#fname").value;
         const expression = document.querySelector("#expression").value;
@@ -48,7 +51,12 @@
         document.querySelector("#output-page").className = "showing";
         document.querySelector("#input-page").className = "hidden";
         document.querySelector("header").className = "hidden";
+    };
+        
 
+    myForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        submitForm();
     });
 
     document.querySelector("#createPost").addEventListener("click", function(e){
@@ -59,7 +67,6 @@
     document.querySelector("#next").addEventListener("click", function(e){
         e.preventDefault();
         document.querySelector("#second-set").className = "showing";
-        // document.querySelector("#share").className = "showing";
         document.querySelector("#first-set").className = "hidden";
 
         generateRandomImg(imgArray);
@@ -71,9 +78,20 @@
         document.querySelector("#first-set").className = "showing";
     });
 
-    function generateRandomImg(imgArray) {
-        let randomIndex = Math.floor(Math.random() * imgArray.length);
-        img.setAttribute("src", imgArray[randomIndex]);
-    }
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "ArrowLeft") {
+            document.querySelector("#second-set").className = "hidden";
+            document.querySelector("#first-set").className = "showing";
+        };
+        if (e.key === "ArrowRight") {
+            document.querySelector("#second-set").className = "showing";
+            document.querySelector("#first-set").className = "hidden";
+        };
+        if (e.key === "Enter") {
+            submitForm();
+        }
+    });
+
+    
 
 }());
