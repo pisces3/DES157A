@@ -13,6 +13,16 @@
     const friendOut = document.querySelector("#friendOut");
     const expOut = document.querySelector("#expOut");
     const adjOut = document.querySelector("#adjOut");
+
+    const img1 = "images/img1.jpeg";
+    const img2 = "images/img2.jpeg";
+    const img3 = "images/img3.jpeg";
+    const img4 = "images/img4.jpeg";
+    const img5 = "images/img5.jpeg";
+    const img6 = "images/img6.jpeg";
+
+    const imgArray = [img1, img2, img3, img4, img5, img6];
+    const img = document.querySelector("#output-img");
         
 
     myForm.addEventListener("submit", function(e) {
@@ -51,6 +61,8 @@
         document.querySelector("#second-set").className = "showing";
         document.querySelector("#share").className = "showing";
         document.querySelector("#first-set").className = "hidden";
+
+        generateRandomImg(imgArray);
     });
 
     document.querySelector("#prev").addEventListener("click", function(e){
@@ -59,6 +71,9 @@
         document.querySelector("#first-set").className = "showing";
     });
 
-
+    function generateRandomImg(imgArray) {
+        let randomIndex = Math.floor(Math.random() * imgArray.length);
+        img.setAttribute("src", imgArray[randomIndex]);
+    }
 
 }());
