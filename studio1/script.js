@@ -13,8 +13,7 @@
     const friendOut = document.querySelector("#friendOut");
     const expOut = document.querySelector("#expOut");
     const adjOut = document.querySelector("#adjOut");
-    
-    
+        
 
     myForm.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -59,6 +58,7 @@
         document.querySelector("#second-set").className = "hidden";
         document.querySelector("#first-set").className = "showing";
     });
+
 
 
 }());
