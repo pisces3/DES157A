@@ -36,44 +36,55 @@
 
     <section id="input-page" class="hidden">
         <h3>Create new post</h3>
-        <section class="main-field">
+        <!-- <section class="main-field"> -->
             
             <section class="photo-field">
                 <i class="fas fa-images"></i>                
                 <h2>Generating a random photo</h2>
             </section>
-    
-            <form method="POST" action="processor.php"> 
 
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Bob">
-       
-                <label for="fname">Friend's Name</label>
-                <input type="text" name="fname" id="fname" placeholder="Tom">
-       
-                <label for="expression">Expression</label>
-                <input type="text" name="expression" id="expression" placeholder="OMG">
-       
-                <label for="celebrity">Celebrity</label>
-                <input type="text" name="celebrity" id="celebrity" placeholder="Tom Holland">
-       
-                <label for="location">Location</label>
-                <input type="text" name="location" id="location" placeholder="Switzerland">
-       
-                <label for="adjective">Adjective</label>
-                <input type="text" name="adjective" id="adjective" placeholder="amazing">
-       
-                <label for="songLyric">Song Lyric</label>
-                <input type="text" name="songLyric" id="songLyric" placeholder="oh my god">
+            <div class="line"></div>
     
-                <label for="actionVerb">Action Verb</label>
-                <input type="text" name="actionVerb" id="actionVerb" placeholder="playing">
-    
-                <input type="submit" name="send" value="Share Post">
+            <form method="POST" action="processor.php">
+
+                <fieldset id="first-set" class="showing">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Bob">
+        
+                    <label for="fname">Friend's Name</label>
+                    <input type="text" name="fname" id="fname" placeholder="Tom">
+        
+                    <label for="expression">Expression</label>
+                    <input type="text" name="expression" id="expression" placeholder="OMG">
+        
+                    <label for="celebrity">Celebrity</label>
+                    <input type="text" name="celebrity" id="celebrity" placeholder="Tom Holland">
+
+                    <button id="next">Next</button>
+                </fieldset>
+
+                <fieldset id="second-set" class="hidden">
+                    <label for="location">Location</label>
+                    <input type="text" name="location" id="location" placeholder="Switzerland">
+        
+                    <label for="adjective">Adjective</label>
+                    <input type="text" name="adjective" id="adjective" placeholder="amazing">
+        
+                    <label for="songLyric">Song Lyric</label>
+                    <input type="text" name="songLyric" id="songLyric" placeholder="oh my god">
+        
+                    <label for="actionVerb">Action Verb</label>
+                    <input type="text" name="actionVerb" id="actionVerb" placeholder="playing">
+
+                    <button id="prev">Previous</button>
+                    <input type="submit" name="send" value="Share Post" class="hidden" id="share">
+                </fieldset>
+
+               
+
     
             </form>
-        </section>
-
+        <!-- </section> -->
     </section>
 
     <section id="output-page" class="hidden">
@@ -82,6 +93,8 @@
             <section class="photo-field">
                 <img src="images/truck-img.jpeg" alt="Aesthetic Picture of a truck filled with flowers" width="640" height="640">
             </section>
+
+            <!-- <div class="line"></div> -->
 
             <section id="ig-caption">
 
@@ -95,6 +108,7 @@
                     </section>
                 </section>
 
+                <div id="output-line"></div>
 
                 <section id="comment">
                     <section class="text">

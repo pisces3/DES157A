@@ -47,4 +47,18 @@
         document.querySelector("#input-page").className = "showing";
     });
 
+    document.querySelector("#next").addEventListener("click", function(e){
+        e.preventDefault();
+        document.querySelector("#second-set").className = "showing";
+        document.querySelector("#share").className = "showing";
+        document.querySelector("#first-set").className = "hidden";
+    });
+
+    document.querySelector("#prev").addEventListener("click", function(e){
+        e.preventDefault();
+        document.querySelector("#second-set").className = "hidden";
+        document.querySelector("#first-set").className = "showing";
+    });
+
+
 }());

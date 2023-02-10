@@ -10,11 +10,8 @@ body {
 
     max-width: 1200px;
     min-width: 900px;
-    /* height: 750px; */
     margin: auto;
     height: 100%;
-
-    /* position: relative; */
 }
 
 footer {
@@ -37,11 +34,12 @@ header {
     align-items: center;
 
     position: absolute;
-    left: 50%;
+    left:50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
 
+    /* position: relative; */
+}
 
 h1 {
     font-weight: 400;
@@ -57,33 +55,154 @@ img {
     margin: auto;
 }
 
-header button {
+button {
     margin: auto;
     background: #262626;
     border-radius: 20px;
     padding: 20px;
     color: white;
     border: none;
-
-    border: 1px solid #686868;
-
 }
 
+/* Input page */
 #input-page, #output-page{
+    /* display: none; */
     background: #262626;
     border-radius: 20px;
+    max-width: 75%;
     margin: auto;
     margin-top: 50px;
 
-    /* position: relative; */
+    position: relative;
     height: 600px;
+}
 
+form, #ig-caption{
+    display: block;
     position: absolute;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -35%);
+    left: 60%;
+    top: 3%;
+    border-left: 1px solid #565656;
+    padding-left: 50px;
+    padding-top: 10px;
+}
 
-    width: 900px;
+
+label, input {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+    border: 1px solid #686868;
+    border-radius: 5px;
+    background: #262626;
+    padding: 5px;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border:1px solid #D6D9DC;
+    outline: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+}
+
+input[type="submit"] {
+    color: white;
+    background: #4193EF;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+fieldset input, fieldset label {
+    display: inline;
+
+}
+
+fieldset label {
+    margin-bottom: 10px;
+}
+
+
+#input-page h3{
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 20px;
+}
+
+.main-field {
+    display: block;
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#input-page .photo-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    left: 25%;
+
+    top: 50%;
+    transform: translate(-50%, 80%);
+}
+
+#input-page .photo-field h2 {
+    text-align: center;
+    font-weight: 400;
+}
+
+/* #input-page div {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 0px 0px 20px 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+/* .line {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    width: 50px;
+    
+    position: absolute;
+    left: 586px;
+    top: 184px;
+
+} */
+
+.fas.fa-images {
+    display: block;
+    font-size: 100px;
+}
+
+/* #output-page {
+    display: none;
+} */
+
+
+
+/* Output Page */
+.text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* .text div{
+    border-radius: 50%;
+    background: #D9D9D9;
+    height: 20px;
+    width: 20px;
+    display: inline-block
+} */
+
+#output-page img {
+    max-width: 25%;
 }
 
 
@@ -97,205 +216,9 @@ header button {
     opacity: 1;
 }
 
-/* Form page */
-
-form{
-    display: block;
-
+/* #output-page {
     position: absolute;
-    left: 70%;
-    top: -33%;
-    /* border-left: 1px solid #565656; */
-    padding-left: 50px;
-    padding-top: 10px;
-
-    transform: translate(-50%, 50%);
-}
-
-#first-set, #second-set {
-    border: none;
-    flex: 1;
-    position: absolute;
-    left: 70%;
-    top: 10%;
-    transform: translate(-30%, 120%);
-}
-
-.line {
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    width: 537.48px;
-    
-    position: absolute;
-    left: 30%;
-    top: 55%;
-    
-    transform: rotate(90deg);
-
-}
-
-
-
-label, input {
-    display: block;
-}
-
-input {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #686868;
-    border-radius: 5px;
-    background: #262626;
-    padding: 5px;
-    width: 225px;
-}
-
-input[type="text"]:focus {
-    border:1px solid #D6D9DC;
-    outline: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: white;
-}
-
-#input-page button, #share {
-    color: white;
-    background: #4193EF;
-    border-radius: 10px;
-    margin-top: 20px;
-    width: 50%;
-    padding: 10px;
-    border: none;
-}
-
-#input-page button {
-    background: #686868;
-    margin-bottom: 10px;
-}
-
-#share, #next{
-    position: absolute;
-    right: -20%;
-    bottom: -20%;
-}
-
-#prev {
-    position: absolute;
-    bottom: -20%;
-    right: 50%;
-}
-fieldset input, fieldset label {
-    display: inline;
-
-}
-
-fieldset label {
-    margin-bottom: 10px;
-}
-
-/* Input page */
-
-#input-page h3{
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-    padding: 20px;
-}
-
-/* #input-page .main-field {
-    display: block;
-    position: relative;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
 } */
-
-#input-page .photo-field {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-
-    position: absolute;
-    left: 30%;
-    top: 20%;
-    transform: translate(-50%, 50%);
-}
-
-#input-page .photo-field h2 {
-    text-align: center;
-    font-weight: 400;
-    font-size: 32px;
-}
-
-.fas.fa-images {
-    display: block;
-    font-size: 150px;
-}
-
-
-
-/* Output Page */
-.text {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.text div{
-    border-radius: 50%;
-    background: #D9D9D9;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-}
-
-#output-page img {
-    object-fit: cover;
-    max-width: 60%;
-    border-radius: 10px 0px 0px 10px;
-    height: 600px;
-}
-
-#ig-caption {
-    position: absolute;
-    left: 70%;
-    top: 10%;
-    transform: translate(-30%, 120%);
-
-}
-
-#user-name {
-    position: absolute;
-    top: -135%;
-}
-
-#output-line {
-    border: 1px solid #565656;
-    position: absolute;
-    width: 358px;
-    top: -110%;
-    left: -13%;
-}
-
-#comment .text{
-    /* position: absolute;
-    top: 100%; */
-    margin-bottom: 10px;
-}
-
-.far.fa-heart, .far.fa-comment{
-    font-size: 24px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-}
-
-/* #comment {
-    position: absolute;
-    top: -20%;
-} */
-
-/* #likes {
-    position: absolute;
-    top: -50%;
-} */
-
-
-
-
