@@ -59,7 +59,7 @@
     document.querySelector("#next").addEventListener("click", function(e){
         e.preventDefault();
         document.querySelector("#second-set").className = "showing";
-        document.querySelector("#share").className = "showing";
+        // document.querySelector("#share").className = "showing";
         document.querySelector("#first-set").className = "hidden";
 
         generateRandomImg(imgArray);
