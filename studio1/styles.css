@@ -68,12 +68,16 @@ header button {
     border: 1px solid #686868;
 
 }
-
-button:hover, #share:hover, #input-page button:hover{
+ header button:hover, #input-page button:hover{
     cursor:pointer;
-    background: linear-gradient(180deg, #C11D89 0%, rgba(146, 202, 255, 0.88) 100%);
-    /* transition: 1s ease-in; */
+    background: #4B4A4A;
+        /* transition: 1s ease-in; */
     /* transform: scale(1.1); */
+}
+
+#share:hover {
+    cursor:pointer;
+    background: #4193EF;
 }
 
 #input-page, #output-page{
@@ -168,7 +172,7 @@ input[type="text"]:focus {
 
 #input-page button, #share {
     color: white;
-    background: #4193EF;
+    background: #6BADF8;
     border-radius: 10px;
     margin-top: 20px;
     width: 50%;
@@ -299,11 +303,7 @@ fieldset label {
     left: -13%;
 }
 
-#comment .text{
-    /* position: absolute;
-    top: 100%; */
-    margin-bottom: 10px;
-}
+
 
 .far.fa-heart, .far.fa-comment{
     font-size: 24px;
@@ -313,9 +313,15 @@ fieldset label {
 }
 
 /* #comment {
-    position: absolute;
-    top: -20%;
+    position: relative;
 } */
+
+#comment .text{
+    /* position: absolute;
+    top: 100%; */
+    margin-bottom: 10px;
+}
+
 
 /* #likes {
     position: absolute;
