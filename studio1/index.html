@@ -36,10 +36,8 @@
 
     <section id="input-page" class="hidden">
         <h3>Create new post</h3>
-        <!-- <section class="main-field"> -->
             
             <section class="photo-field">
-                <!-- <i class="fas fa-images"></i> -->
                 <div class="load"></div>                
                 <h2>Generating a random photo</h2>
             </section>
@@ -53,13 +51,15 @@
                     <input type="text" name="name" id="name" placeholder="Bob">
         
                     <label for="fname">Friend's Name</label>
-                    <input type="text" name="fname" id="fname" placeholder="Tom">
+                    <input type="text" name="friends-name" id="friends-name" placeholder="Tom">
         
                     <label for="expression">Expression</label>
                     <input type="text" name="expression" id="expression" placeholder="OMG">
         
                     <label for="celebrity">Celebrity</label>
                     <input type="text" name="celebrity" id="celebrity" placeholder="Tom Holland">
+
+                    <p class="error"></p>
 
                     <button id="next">Next</button>
                 </fieldset>
@@ -74,22 +74,18 @@
                     <label for="songLyric">Song Lyric</label>
                     <input type="text" name="songLyric" id="songLyric" placeholder="oh my god">
         
-                    <label for="actionVerb">Action Verb</label>
+                    <label for="actionVerb">Action Verb (ending in -ing)</label>
                     <input type="text" name="actionVerb" id="actionVerb" placeholder="playing">
 
                     <button id="prev">Previous</button>
                     <input type="submit" name="send" value="Share Post" id="share">
                 </fieldset>
 
-               
-
-    
             </form>
-        <!-- </section> -->
     </section>
 
     <section id="output-page" class="hidden">
-        <section class="main-field">
+        <!-- <section class="main-field"> -->
 
             <section class="photo-field">
                 <img src="images/placeholder.jpg" alt="Placeholder pic" width="640" height="640" id="output-img">
@@ -103,7 +99,7 @@
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p class="nameOut">@name</p>
+                            <p id="nameOut1">@name</p>
                             <p id="locationOut">location</p>
                         </section>
                     </section>
@@ -115,7 +111,7 @@
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p class="nameOut">@name</p>
+                            <p id="nameOut2">@name</p>
                             <p id="verbOut">Currently [action verb] about life</p>
                             <p id="lyricOut">#songlyric</p>
                         </section>
@@ -132,7 +128,7 @@
                     <section class="text">
                         <div></div>
                         <section class="text-field">
-                            <p class="celebOut">@celebrity</p>
+                            <p id="celebOut1">@celebrity</p>
                             <p id="adjOut">You're doing [adjective] sweetie </p>
                         </section>
                     </section>
@@ -142,12 +138,12 @@
                 <section id="likes">
                     <i class="far fa-heart"></i>
                     <i class="far fa-comment"></i>
-                    <p>Liked by [celebrity] and others</p>
+                    <p id="celebOut2">Liked by [celebrity] and others</p>
                 </section>
 
             </section>
 
-        </section>
+        <!-- </section> -->
 
     </section>
 
