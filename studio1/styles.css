@@ -298,16 +298,17 @@ fieldset label {
 
 .profile {
     border-radius: 50%;
-    background: #D9D9D9;
+    /* background: #D9D9D9; */
     height: 40px;
     width: 40px;
+    margin: 0;
 }
 
 #output-page {
     display: flex;
 }
 
-#output-page img {
+#output-img {
     object-fit: cover;
     /* max-width: 70%; */
     border-radius: 10px 0px 0px 10px;
@@ -319,7 +320,7 @@ fieldset label {
     flex-direction: column;
     align-content: space-between;
     gap: 50px;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-right: 20px;
 
 }

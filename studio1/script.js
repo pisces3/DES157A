@@ -116,7 +116,7 @@
         lyricOut.innerHTML =  `#${songLyric}`;
         friendOut.innerHTML = `@${friendName}`;
         expOut.innerHTML = `${expression}!`;
-        adjOut.innerHTML = `You're doing ${adjective} sweetie <3`;
+        adjOut.innerHTML = `You're ${adjective} sweetie`;
 
         // document.querySelector("#name").style.color = "magenta";
 
