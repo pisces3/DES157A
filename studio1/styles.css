@@ -35,20 +35,44 @@ header {
     gap: 20px;
     justify-content: center;
     align-items: center;
+}
+
+#landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
 
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 40%;
+    top: 45%;
+    transform: translate(-30%, -50%);
+}
+
+.phone-img {
+    display: block;
+    margin: 0;
+    animation: animate 5s infinite;
+    opacity: 0;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 1;
+        content: url(images/phone1.png);
+    }
+    100% {
+        opacity: 1;
+        content: url(images/phone2.png);
+    }
 }
 
 
 h1 {
     font-weight: 400;
-    font-size: 64px;
+    font-size: 56px;
     margin-bottom: -5px;
     text-align: center;
-
 }
 
 img {
@@ -57,7 +81,7 @@ img {
     margin: auto;
 }
 
-header button {
+#createPost {
     margin: auto;
     background: #262626;
     border-radius: 20px;
@@ -68,7 +92,7 @@ header button {
     border: 1px solid #686868;
 
 }
- header button:hover, #input-page button:hover{
+#createPost:hover, #input-page button:hover{
     cursor:pointer;
     background: #4B4A4A;
         /* transition: 1s ease-in; */
@@ -99,13 +123,15 @@ header button {
 
 
 .hidden {
+    /* display: none; */
     visibility: hidden;
     opacity: 0;
 }
 
 .showing {
-    visibility: visible;
-    opacity: 1;
+    display: block;
+    /* visibility: visible;
+    opacity: 1; */
 }
 
 /* Form page */
@@ -143,8 +169,6 @@ form{
     transform: rotate(90deg);
 
 }
-
-
 
 label, input {
     display: block;
@@ -219,6 +243,10 @@ fieldset label {
     position: relative;
 } */
 
+.error {
+    color: transparent;
+}
+
 #input-page .photo-field {
     display: flex;
     flex-direction: column;
@@ -268,43 +296,43 @@ fieldset label {
     gap: 10px;
 }
 
-.text div{
+.profile {
     border-radius: 50%;
     background: #D9D9D9;
     height: 40px;
     width: 40px;
-    display: inline-block;
+}
+
+#output-page {
+    display: flex;
 }
 
 #output-page img {
     object-fit: cover;
-    max-width: 60%;
+    /* max-width: 70%; */
     border-radius: 10px 0px 0px 10px;
     height: 600px;
 }
 
 #ig-caption {
-    position: absolute;
-    left: 70%;
-    top: 10%;
-    transform: translate(-30%, 120%);
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    gap: 50px;
+    margin-left: 30px;
+    margin-right: 20px;
 
 }
 
 #user-name {
-    position: absolute;
-    top: -135%;
+    align-items: flex-start;
+    margin-top: 20px;
 }
 
-#output-line {
+.output-line {
     border: 1px solid #565656;
-    position: absolute;
-    width: 358px;
-    top: -110%;
-    left: -13%;
+    margin-top: 10px;
 }
-
-
 
 .far.fa-heart, .far.fa-comment{
     font-size: 24px;
@@ -313,22 +341,25 @@ fieldset label {
     margin-top: 15px;
 }
 
-/* #comment {
+#comment {
     position: relative;
-} */
+    bottom: 20px;
+}
 
 #comment .text{
-    /* position: absolute;
-    top: 100%; */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
-/* #likes {
-    position: absolute;
-    top: -50%;
-} */
+#likes {
+    align-items: flex-end;
+    position: relative;
+    bottom: -100px;
+}
 
+.output {
+    font-weight: 700;
+}
 
 
 

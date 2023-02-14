@@ -27,11 +27,15 @@
     <title>InstaLib</title>
 </head>
 <body>
-    <header class="showing">
-        <h1>Welcome to </h1>
-        <img src="images/InstaLibLogo.png" alt="InstaLib Logo">
-        <button type="button" id="createPost">Create New Post</button>
-    </header>
+    <section id="landing-page" class="showing">
+        <img src="images/phone1.png" alt="Instagram-phone" class="phone-img">
+        <header>
+            <h1>Welcome to </h1>
+            <img src="images/InstaLibLogo.png" alt="InstaLib Logo">
+            <button type="button" id="createPost">Create New Post</button>
+        </header>
+    </section>
+    
     
 
     <section id="input-page" class="hidden">
@@ -59,7 +63,7 @@
                     <label for="celebrity">Celebrity</label>
                     <input type="text" name="celebrity" id="celebrity" placeholder="Tom Holland">
 
-                    <p class="error"></p>
+                    <p class="error">hello</p>
 
                     <button id="next">Next</button>
                 </fieldset>
@@ -77,6 +81,8 @@
                     <label for="actionVerb">Action Verb (ending in -ing)</label>
                     <input type="text" name="actionVerb" id="actionVerb" placeholder="playing">
 
+                    <p class="error">hello</p>
+
                     <button id="prev">Previous</button>
                     <input type="submit" name="send" value="Share Post" id="share">
                 </fieldset>
@@ -87,9 +93,9 @@
     <section id="output-page" class="hidden">
         <!-- <section class="main-field"> -->
 
-            <section class="photo-field">
+            <!-- <section class="photo-field"> -->
                 <img src="images/placeholder.jpg" alt="Placeholder pic" width="640" height="640" id="output-img">
-            </section>
+            <!-- </section> -->
 
             <!-- <div class="line"></div> -->
 
@@ -97,19 +103,19 @@
 
                 <section id="user-name">
                     <section class="text">
-                        <div></div>
+                        <div class="profile"></div>
                         <section class="text-field">
                             <p id="nameOut1">@name</p>
                             <p id="locationOut">location</p>
                         </section>
                     </section>
+                    <div class="output-line"></div>
                 </section>
 
-                <div id="output-line"></div>
 
                 <section id="comment">
                     <section class="text">
-                        <div></div>
+                        <div class="profile"></div>
                         <section class="text-field">
                             <p id="nameOut2">@name</p>
                             <p id="verbOut">Currently [action verb] about life</p>
@@ -118,7 +124,7 @@
                     </section>
 
                     <section class="text">
-                        <div></div>
+                        <div class="profile"></div>
                         <section class="text-field">
                             <p id="friendOut">@friends-name</p>
                             <p id="expOut">[EXPRESSION]!</p>
@@ -126,7 +132,7 @@
                     </section>
 
                     <section class="text">
-                        <div></div>
+                        <div class="profile"></div>
                         <section class="text-field">
                             <p id="celebOut1">@celebrity</p>
                             <p id="adjOut">You're doing [adjective] sweetie </p>
@@ -136,6 +142,7 @@
 
 
                 <section id="likes">
+                    <div class="output-line"></div>
                     <i class="far fa-heart"></i>
                     <i class="far fa-comment"></i>
                     <p id="celebOut2">Liked by [celebrity] and others</p>

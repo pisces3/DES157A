@@ -5,27 +5,41 @@
     console.log("reading js");
 
     const myForm = document.querySelector("form");
+    const errorMessage = document.querySelectorAll(".error");
 
 
     myForm.addEventListener("submit", function(e) {
         e.preventDefault();
-        submitForm();
+        const secondForm = document.querySelector("#second-set");
+        const formData = secondForm.querySelectorAll("input[type=text]");
+        if (validateForm(formData, errorMessage[1])) {
+            generateRandomImg();
+            submitForm();       
+        }
+        else {
+            showSecondForm();
+        }
+        
     });
+
+  
 
     document.querySelector("#createPost").addEventListener("click", function(e){
         e.preventDefault();
         document.querySelector("#input-page").className = "showing";
+        document.querySelector("#landing-page").className = "hidden";
     });
 
     document.querySelector("#next").addEventListener("click", function(e){
         e.preventDefault();
-        if (validateForm()) {
+        const firstForm = document.querySelector("#first-set");
+        const formData = firstForm.querySelectorAll("input[type=text]");
+        if (validateForm(formData, errorMessage[0])) {
             showSecondForm();  
         }
         else {
             showFirstForm();
         }
-        generateRandomImg();
     });
 
     document.querySelector("#prev").addEventListener("click", function(e){
@@ -40,9 +54,10 @@
         if (e.key === "ArrowRight") {
             showSecondForm();
         };
-        if (e.key === "Enter") {
-            submitForm();
-        }
+        // if (e.key === "Enter") {
+        //     submitForm();
+        // };
+        
     });
 
     function generateRandomImg() {
@@ -81,21 +96,39 @@
         const expOut = document.querySelector("#expOut");
         const adjOut = document.querySelector("#adjOut");
 
-        nameOut1.innerHTML = name;
-        nameOut2.innerHTML = name;
-        celebOut1.innerHTML = celebrity;
-        celebOut2.innerHTML = celebrity;
+
+        document.querySelector("#name").style.fontWeight = "700";
+        // document.querySelector("#friends-name").value;
+        // document.querySelector("#expression").value;
+        // document.querySelector("#celebrity").value;
+        // document.querySelector("#location").value;
+        // document.querySelector("#adjective").value;
+        // document.querySelector("#songLyric").value;
+        // document.querySelector("#actionVerb").value;
+
+
+        nameOut1.innerHTML = `@${name}`;
+        nameOut2.innerHTML = `@${name}`;
+        celebOut1.innerHTML = `@${celebrity}`;
+        celebOut2.innerHTML = `Liked by ${celebrity} and others`;
         locationOut.innerHTML = location;
-        verbOut.innerHTML = actionVerb;
-        lyricOut.innerHTML = songLyric;
-        friendOut.innerHTML = friendName;
-        expOut.innerHTML = expression;
-        adjOut.innerHTML = adjective;
+        verbOut.innerHTML = `Currently ${actionVerb} about life`;
+        lyricOut.innerHTML =  `#${songLyric}`;
+        friendOut.innerHTML = `@${friendName}`;
+        expOut.innerHTML = `${expression}!`;
+        adjOut.innerHTML = `You're doing ${adjective} sweetie <3`;
+
+        // document.querySelector("#name").style.color = "magenta";
 
         document.querySelector("#output-page").className = "showing";
         document.querySelector("#input-page").className = "hidden";
-        document.querySelector("header").className = "hidden";
+        document.querySelector("#landing-page").className = "hidden";
     };
+
+    // myForm.addEventListener("input[type=text]", function() {
+    //     document.querySelector("#name").style.color = "magenta";
+    // });
+    
 
     function showFirstForm() {
         document.querySelector("#second-set").className = "hidden";
@@ -106,15 +139,13 @@
         document.querySelector("#first-set").className = "hidden";
     };
 
-    function validateForm() {
-        const firstForm = document.querySelector("#first-set");
-        const formData = firstForm.querySelectorAll("input[type=text]");
-        const errorMessage = document.querySelector(".error");
+    function validateForm(formData, whichButton) {
         for (let i = 0; i < formData.length; i++) {
             if (formData[i].value == "") {
                 const emptyField = formData[i].id;
                 const errorText = `Please fill out ${emptyField}`;
-                errorMessage.innerHTML = errorText;
+                whichButton.innerHTML = errorText;
+                whichButton.style.color = "white";
                 document.querySelector(`#${emptyField}`).focus();
                 return false;
             }
