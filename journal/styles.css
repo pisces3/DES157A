@@ -94,3 +94,16 @@ footer {
 }
 
 
+img {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+figcaption {
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+  }
