@@ -10,75 +10,91 @@
      <!-- Font Awesome -->
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+     <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+     <!-- Link to CSS -->
+     <link href="styles.css" rel="stylesheet">
+
+     <script src="script.js" defer></script>
+
+
 
     <title>#rctyle : Every Picture</title>
 
 </head>
 <body>
-    <header>
+    <header class="hidden">
         <h1>#rctyle</h1>
         <div>insert image later</div>
         <h2>Rheiana Cuevas</h2>
         <h3>1.57k Followers</h3>
     </header>
 
-    <section class="showing" id="landing-page">
-
-        <section id="2019">
-            <img src="images/2019.JPG" alt="2019 picture">
+    
+    <div class="hidden"> <section  id="landing-page">
+        <section id="nineteen">
+            <img src="images/2019.JPG" alt="2019 picture" class="small-img">
             <section class="caption">
                 <p>2019</p>
                 <i class="far fa-star"></i>
             </section>
         </section>
 
-        <section id="2020">
-            <img src="images/2020.JPG" alt="2020 picture">
+        <section id="twenty">
+            <img src="images/2020.JPG" alt="2020 picture" class="small-img">
             <section class="caption">
                 <p>2020</p>
                 <i class="far fa-star"></i>
             </section>
         </section>
 
-        <section id="2021">
-            <img src="images/2021.JPG" alt="2021 picture">
+        <section id="twenty-one">
+            <img src="images/2021.JPG" alt="2021 picture" class="small-img">
             <section class="caption">
                 <p>2021</p>
                 <i class="far fa-star"></i>
             </section>
         </section>
 
-        <section id="2022">
-            <img src="images/2022.JPG" alt="2022 picture">
+        <section id="twenty-two">
+            <img src="images/2022.JPG" alt="2022 picture" class="small-img">
             <section class="caption">
                 <p>2022</p>
                 <i class="far fa-star"></i>
             </section>
         </section>
 
-        <section id="2023">
-            <img src="images/2023.JPG" alt="2023 picture">
+        <section id="twenty-three">
+            <img src="images/2023.JPG" alt="2023 picture" class="small-img">
             <section class="caption">
                 <p>2023</p>
                 <i class="far fa-star"></i>
             </section>
         </section>
-    
+        </section>
     <!-- end of landing page section -->
-    </section>
+    </div>
+    
+    
 
-    <main class="hidden">
-        <section id="2020-full">
+    <main class="showing">
+        <section id="twenty-full">
 
             <section class="image">
-                <img src="images/2020.JPG" alt="2020 outfit" usemap="#2020map">
-                <map name="2020map">
-                    <!-- insert coordinates here -->
-                    <area shape="poly">
+                <img src="images/2020.JPG" alt="2020 outfit" usemap="#twentymap">
+                <map name="twentymap">
+                    <!-- <area shape="poly" coords="230,228,211,252,224,269,229,310,221,320,306,327,303,315,308,294,339,283,333,247,310,237,291,260,245,261,237"> -->
+                    <area shape="circle" coords="337,300,44">
+                    <!-- <area shape="poly" coords="600,500"> -->
+
                 </map>
             </section>
 
             <section class="text">
+                <p id="find-coords"></p>
                 <h1>Sunflower Vol. 6</h1>
                 <h2>Sunflower Fields at Woodland, CA</h2>
                 <h2>June 2020</h2>
