@@ -38,8 +38,6 @@ footer {
     /* visibility: hidden; */
 }
 
-
-
 .showing {
     display: block;
 }
@@ -71,6 +69,15 @@ footer {
     font-size: 25px;
 }
 
+
+#twenty:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+/* full view  */
+
 #twenty-full {
     background: white;
     width: 1000px;
@@ -86,6 +93,20 @@ footer {
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+.fas.fa-arrow-left {
+    font-size: 36px;
+    color: #D32D2F;
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    display: inline-block;
+}
+
+.fas.fa-arrow-left:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .image {
