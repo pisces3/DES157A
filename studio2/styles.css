@@ -108,10 +108,13 @@ footer {
     max-width: 50%;
 }
 
-area {
-    border: 50px red dashed;
-    position: absolute;
-    top: 0;
-    left: 100px;
+.mini-text {
+    display: flex;
+    gap: 10px;
+}
+
+.fas.fa-map-pin, .fas.fa-clock {
+    font-size: 24px;
+    color: #D32D2F;
 }
 
