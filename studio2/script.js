@@ -19,8 +19,18 @@
         document.querySelector("main").className = "showing";
     });
 
-   
-
+    function handleClick(event) {
+        if (event.target === myTop) {
+            clickTop();
+        }
+        else if (event.target === myPants) {
+            clickPants();
+        }
+        else {
+            clickOut();
+        };
+    };
+    
     const twentyOutfit = document.querySelector("#twenty-outfit");
     const myTop = document.querySelector("#twenty-top");
     const myPants = document.querySelector("#twenty-bottom");
@@ -33,6 +43,7 @@
 
     myTop.addEventListener("click", clickTop);
     myPants.addEventListener("click", clickPants);
+    twentyOutfit.addEventListener("click", clickOut);
 
     function clickTop(event) {
         event.preventDefault();
@@ -65,5 +76,10 @@
         secondPara.innerHTML = "I still wear this pants today and still one of my faves <3 They’re really comfy and suit with everything. If I’m feeling more a summer vibe, I would pair it with puff shoulder light colored tops. If I’m feeling a little cool, I would pair it with a black turtleneck and leather jacket. If I’m feeling like a college student, I would pair it with a comfy sweatshirt.";
     }
 
+    function clickOut(event) {
+        event.preventDefault();
+        console.log("Clicked outside");
+        twentyOutfit.src = "images/2020.JPG";
+    }
    
 }()); //close iife
