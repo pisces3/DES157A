@@ -35,9 +35,16 @@
         const targetID = event.target.getAttribute("href"); //the id are in the href
         const targetAnchor = document.querySelector(targetID);
 
+        const images = document.getElementById("image").getElementsByTagName("img")
+
+        console.log(images);
+
+
         //getBoundingClientRect() tells top property of any element in relation to window
         //floor = round; -150 = put element below header
         const originalTop = Math.floor(targetAnchor.getBoundingClientRect().top) - 150;
+
+
         //smooth scroll magic
         story.scrollBy({top: originalTop, left:0, behavior:"smooth" });
     };
@@ -73,45 +80,21 @@
 
     //taken from the Javascript scroll effects too; allows users to also see pieces of clothing through scrolling
     window.addEventListener("load", function() {
-        const posts = document.querySelectorAll(".text");
-        let postTops = [];
-        let pageTop;
-        let counter = 1;
-        let prevCounter = 1;
-
-        posts.forEach(function(post) {
-            //add top of each post into postTops array
-            postTops.push(Math.floor(post.getBoundingClientRect().top) + story.scrollTop);
-        });
 
         //we're only scrolling the story text part
-        story.addEventListener("scroll", function(event) {
-            //page top reports how far you scrolled down
-            //cant use pageYoffset for this type so I used scrollTop in replacement
-            pageTop = story.scrollTop + 400;
+        story.addEventListener("scroll", function() {
+        let pageTop = story.scrollTop;
+        // console.log(pageTop);
 
-            if (pageTop > postTops[counter]) {
-                //if user is scrolling down, the counter increases
-                counter++;
-                console.log(`scrolling down ${counter}`);
-            }
-            // if the user is down the page and scrolling up
-            else if (counter > 1 && pageTop < postTops[counter - 1]) {
-                counter--;
-                console.log(`scrolling up ${counter}`);
-            }
-            //if user is at the top text = counter is 1 = resets back to original image
-            if (counter === 1) {
-                twentyOutfit.src = "images/2020.JPG";
-            }
-            // if user is at the middle text = counter is 2 = highlights top
-            else if (counter === 2) {
-                twentyOutfit.src = "images/twenty-top.jpg";
-            }
-            // if user is at the last text section = counter is 3 = higlights pants
-            else if (counter === 3) {
-                twentyOutfit.src = "images/twenty-pants.jpg";
-            }
+        if (pageTop > 120 && pageTop < 600) {
+            twentyOutfit.src = "images/twenty-top.jpg";
+        }
+        else if (pageTop > 600) {
+            twentyOutfit.src = "images/twenty-pants.jpg";
+        }
+        else {
+            twentyOutfit.src = "images/2020.JPG";
+        }
         });
     }); //end of window load
 
