@@ -4,6 +4,7 @@
     "use strict";
     console.log("reading js");
 
+    //go back to landing page
     document.querySelector(".back-button").addEventListener("click", function(e){
         e.preventDefault();
         document.querySelector("#header").className = "showing";
@@ -11,6 +12,7 @@
         document.querySelector("main").className = "hidden";
     });
 
+    // go to main story full page
     const clickTwenty = document.querySelector("#twenty");
     clickTwenty.addEventListener("click", function(e){
         e.preventDefault();
@@ -19,67 +21,99 @@
         document.querySelector("main").className = "showing";
     });
 
-    function handleClick(event) {
-        if (event.target === myTop) {
-            clickTop();
-        }
-        else if (event.target === myPants) {
-            clickPants();
-        }
-        else {
-            clickOut();
-        };
+
+    const story = document.querySelector(".story");
+
+    //from Javascript scroll effects slides
+    const navLinks = document.querySelectorAll(".nav-link"); //targets all pieces of clothing to be clicked
+    navLinks.forEach(function(eachLink) {
+        eachLink.addEventListener("click", smoothScroll); //when you click on a piece of clothing, it will call smooth scroll function which shows the story
+    });
+
+    function smoothScroll(event) {
+        event.preventDefault();
+        const targetID = event.target.getAttribute("href"); //the id are in the href
+        const targetAnchor = document.querySelector(targetID);
+
+        //getBoundingClientRect() tells top property of any element in relation to window
+        //floor = round; -150 = put element below header
+        const originalTop = Math.floor(targetAnchor.getBoundingClientRect().top) - 150;
+        //smooth scroll magic
+        story.scrollBy({top: originalTop, left:0, behavior:"smooth" });
     };
-    
+
+    //declaring variable for all of my area maps of pieces of clothing
     const twentyOutfit = document.querySelector("#twenty-outfit");
     const myTop = document.querySelector("#twenty-top");
     const myPants = document.querySelector("#twenty-bottom");
 
-    let title = document.querySelector(".text h1");
-    let location = document.querySelectorAll(".text h2")[0];
-    let date = document.querySelectorAll(".text h2")[1];
-    let firstPara = document.querySelectorAll(".text p")[0];
-    let secondPara = document.querySelectorAll(".text p")[1];
+    //when you click on any of these pieces of clothing, the handleClick which changes the images to highlight specific piece of clothing is called
+    myTop.addEventListener("click", handleClick);
+    myPants.addEventListener("click", handleClick);
+    twentyOutfit.addEventListener("click", handleClick);
+    
 
-    myTop.addEventListener("click", clickTop);
-    myPants.addEventListener("click", clickPants);
-    twentyOutfit.addEventListener("click", clickOut);
-
-    function clickTop(event) {
+    function handleClick(event) {
         event.preventDefault();
-        console.log("clicked the top");
+        if (event.target === myTop) {
+            //change image to highlight top
+            twentyOutfit.src = "images/twenty-top.jpg";
+        }
+        else if (event.target === myPants) {
+            event.preventDefault();
+            //chagne image to highlight pants
+            twentyOutfit.src = "images/twenty-pants.jpg";
+        }
+        else {
+            event.preventDefault();
+            //reset image back
+            twentyOutfit.src = "images/2020.JPG";
+        };
+    };
 
-        //change image to highlight the top
-        twentyOutfit.src = "images/twenty-top.jpg";
+    //taken from the Javascript scroll effects too; allows users to also see pieces of clothing through scrolling
+    window.addEventListener("load", function() {
+        const posts = document.querySelectorAll(".text");
+        let postTops = [];
+        let pageTop;
+        let counter = 1;
+        let prevCounter = 1;
 
-        //change text
-        title.innerHTML = "COLLUSION square neck top";
-        location.innerHTML = "ASOS";
-        date.innerHTML = "May 2020";
-        firstPara.innerHTML = "This was very first purchase on the ASOS website. I bought it for $24. This was one of those impulsive online shopping purchases. I convinced my dad to buy this for me because there was free shipping and at that time, ASOS rarely does free shipping."
-        secondPara.innerHTML = "This top is perfect for the summer! It’s one of my favorite tops and I always pair it with high waisted wide leg jeans or colorful pants like this one! I had a phase where I would just buy square neck puff sleeve tops because I think they fit me very well. ";
-    }
+        posts.forEach(function(post) {
+            //add top of each post into postTops array
+            postTops.push(Math.floor(post.getBoundingClientRect().top) + story.scrollTop);
+        });
 
-    function clickPants(event) {
-        event.preventDefault();
-        console.log("clicked the bottom");
+        //we're only scrolling the story text part
+        story.addEventListener("scroll", function(event) {
+            //page top reports how far you scrolled down
+            //cant use pageYoffset for this type so I used scrollTop in replacement
+            pageTop = story.scrollTop + 400;
 
-        //chagne image to highlight pants
-        twentyOutfit.src = "images/twenty-pants.jpg";
+            if (pageTop > postTops[counter]) {
+                //if user is scrolling down, the counter increases
+                counter++;
+                console.log(`scrolling down ${counter}`);
+            }
+            // if the user is down the page and scrolling up
+            else if (counter > 1 && pageTop < postTops[counter - 1]) {
+                counter--;
+                console.log(`scrolling up ${counter}`);
+            }
+            //if user is at the top text = counter is 1 = resets back to original image
+            if (counter === 1) {
+                twentyOutfit.src = "images/2020.JPG";
+            }
+            // if user is at the middle text = counter is 2 = highlights top
+            else if (counter === 2) {
+                twentyOutfit.src = "images/twenty-top.jpg";
+            }
+            // if user is at the last text section = counter is 3 = higlights pants
+            else if (counter === 3) {
+                twentyOutfit.src = "images/twenty-pants.jpg";
+            }
+        });
+    }); //end of window load
 
-        
-        //change text
-        title.innerHTML = "Yellow Plaid Pants";
-        location.innerHTML = "Forever 21 at Davis, CA";
-        date.innerHTML = "Late 2018";
-        firstPara.innerHTML = "When I was first building my wardrobe, I would always shop at Forever 21 because they have cheap and trendy clothes. I bought this at the Forever 21 right next to Old Teahouse at the University Mall (RIP F21, you will be missed). I remember the store they had over there was soo big that I think one whole room was just shoes and accessories. I love shopping there because it’s so close to home and there was not a lot of people. "
-        secondPara.innerHTML = "I still wear this pants today and still one of my faves <3 They’re really comfy and suit with everything. If I’m feeling more a summer vibe, I would pair it with puff shoulder light colored tops. If I’m feeling a little cool, I would pair it with a black turtleneck and leather jacket. If I’m feeling like a college student, I would pair it with a comfy sweatshirt.";
-    }
-
-    function clickOut(event) {
-        event.preventDefault();
-        console.log("Clicked outside");
-        twentyOutfit.src = "images/2020.JPG";
-    }
    
 }()); //close iife

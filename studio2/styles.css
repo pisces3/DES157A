@@ -126,7 +126,7 @@ footer {
     flex-direction: column;
     gap: 10px;
     line-height: 1.5em;
-    max-width: 50%;
+    max-width: 90%;
 }
 
 .mini-text {
@@ -137,5 +137,13 @@ footer {
 .fas.fa-map-pin, .fas.fa-clock {
     font-size: 24px;
     color: #D32D2F;
+}
+
+.story {
+    height: 60vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 
