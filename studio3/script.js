@@ -11,6 +11,8 @@
     const actionArea = document.getElementById('actions');
     const overlay = document.getElementById('overlay');
     const dices = document.getElementById('dice-imgs');
+    const diceOne = document.getElementById('dice-one');
+    const diceTwo = document.getElementById('dice-two');
     const follow = document.getElementById("follow");
     const followAgain = document.getElementById("followagain");
     const pass = document.getElementById('pass');
@@ -63,14 +65,18 @@
             gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
             // put the dice images on the screen; the dice array needs to be one less than the random value
-            dices.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> <img src="${gameData.dice[gameData.roll2-1]}">`;
+            dices.innerHTML = `<img src="${gameData.dice[gameData.roll1-1]}"> <img src="${gameData.dice[gameData.roll2-1]}">`;
             gameData.rollSum = gameData.roll1 + gameData.roll2;
-            // console.log(gameData.rollSum);
+            console.log(gameData.rollSum);
 
             // if two 1's are rolled
             if (gameData.rollSum === 2) {
+                overlay.className = "showing";
                 console.log("snake eyes were rolled");
-                document.getElementById('two-ones').className = "showing";
+                document.querySelector("#overlay p").innerHTML = "Is it too late now to say SORRY? You got two Justin Bieber ;/";
+                document.querySelector("#overlay h2").innerHTML = '';
+                // overlay.className = "showing";
+                // document.getElementById('two-ones').className = "showing";
                 // overlay.innerHTML += '<p>Oh snap! Snake eyes!</p>';
                 //resets score to zero
                 gameData.score[gameData.index] = 0;
@@ -81,10 +87,14 @@
             }
             // if either die is a 1 
             else if (gameData.roll1 === 1 || gameData.roll2 === 1) {
+                overlay.className = "showing";
                 console.log("one of the two dice was a 1");
+                document.querySelector("#overlay p").innerHTML = "SORRY, you got one Justin Bieber.";
+                document.querySelector("#overlay h2").innerHTML = '';
+
                 // switch player
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-                document.getElementById('one-ones').className = "showing";
+                // document.getElementById('one-ones').className = "showing";
                 // game.innerHTML += `<p>Sorry,, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
                 setTimeout(setUpTurn, 2000);
             }
