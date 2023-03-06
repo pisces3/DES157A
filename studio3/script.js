@@ -9,9 +9,14 @@
     const playerName = document.getElementById('player-name');
     const score = document.getElementById('score');
     const actionArea = document.getElementById('actions');
+    const overlay = document.getElementById('overlay');
+    const dices = document.getElementById('dice-imgs');
+    const follow = document.getElementById("follow");
+    const followAgain = document.getElementById("followagain");
+    const pass = document.getElementById('pass');
 
     const gameData = {
-            dice: ["images/jb.jpg", "images/two.jpg", "images/three.jpg", "images/four.jpg", "images/five.jpg", "images/six.jpg"],
+            dice: ["images/jb.png", "images/two.png", "images/three.png", "images/four.png", "images/five.png", "images/six.png"],
             players: ['selenagomez', 'haileybieber'],
             score: [0, 0],
             roll1: 0,
@@ -40,29 +45,33 @@
         function setUpTurn() {
             game.className = "showing";
             playerName.innerHTML = `${gameData.players[gameData.index]}`;
+            follow.className = "showing";
 
-            document.getElementById("follow").addEventListener("click", function() {
+            follow.addEventListener("click", function() {
                 console.log("roll the dice!");
                 throwDice();
             });
         };
 
         function throwDice() {
-            game.className = "hidden";
-            actionArea.innerHTML = '';
+            // game.className = "hidden";
+            overlay.className = "hidden";
+            follow.className = "hidden";
+            // actionArea.innerHTML = '';
             // get random values for 1-6 for the score
             gameData.roll1 = Math.floor(Math.random() * 6) + 1;
             gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
             // put the dice images on the screen; the dice array needs to be one less than the random value
-            game.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> <img src="${gameData.dice[gameData.roll2-1]}">`;
+            dices.innerHTML += `<img src="${gameData.dice[gameData.roll1-1]}"> <img src="${gameData.dice[gameData.roll2-1]}">`;
             gameData.rollSum = gameData.roll1 + gameData.roll2;
             // console.log(gameData.rollSum);
 
             // if two 1's are rolled
             if (gameData.rollSum === 2) {
                 console.log("snake eyes were rolled");
-                game.innerHTML += '<p>Oh snap! Snake eyes!</p>';
+                document.getElementById('two-ones').className = "showing";
+                // overlay.innerHTML += '<p>Oh snap! Snake eyes!</p>';
                 //resets score to zero
                 gameData.score[gameData.index] = 0;
                 // switch players : if game data index is false = set index to 0 else, set index to 1 
@@ -75,20 +84,23 @@
                 console.log("one of the two dice was a 1");
                 // switch player
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-                game.innerHTML += `<p>Sorry,, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
+                document.getElementById('one-ones').className = "showing";
+                // game.innerHTML += `<p>Sorry,, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
                 setTimeout(setUpTurn, 2000);
             }
             else {
                 console.log("the game proceeds");
                 gameData.score[gameData.index] += gameData.rollSum;
-                actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button>';
+                followAgain.className = "showing";
+                pass.className = "showing";
+                // actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button>';
 
-                document.getElementById('rollagain').addEventListener('click', function() {
+                followAgain.addEventListener('click', function() {
                     // setUpTurn();
                     throwDice();
                 });
 
-                document.getElementById('pass').addEventListener('click', function() {
+                pass.addEventListener('click', function() {
                     // switch player
                     gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                     setUpTurn();

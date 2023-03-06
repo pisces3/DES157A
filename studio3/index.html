@@ -71,13 +71,32 @@
     </div>
 
     <div id="game" class="hidden">
-        <section id="overlay">
+        <section id="overlay" class="showing">
             <p>You are playing for</p>
             <h2 id="player-name">insert player</h2>
-            <button id="follow">Follow</button>
+        </section>
+
+        <section id="dice-imgs" class="hidden"></section>
+
+        <section class="game-text hidden" id="two-ones">
+            <p>Is it too late now to say SORRY? You got two Justin Bieber ;/</p>
+        </section>
+
+        <section class="game-text hidden" id="one-ones">
+            <p>SORRY, you got one Justin Bieber. </p>
         </section>
     </div>
-    <div id="actions" class="hidden"></div>
+
+
+    <div id="actions">
+        <button id="follow" class="hidden">Follow</button>
+        <section>
+            <button id="followagain" class="hidden">Follow</button>
+            <button id="pass"  class="hidden">Pass</button>
+        </section>
+    </div>
+
+
     <div id="score" class="hidden"></div>
 
     <footer>
