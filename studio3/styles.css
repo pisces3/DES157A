@@ -1,0 +1,181 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    background-color: #131313;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 64px;
+}
+
+h2 {
+    color: #B63A9B;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    background: #B63A9B;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+button {
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 30px;
+    font-size: 36px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+#landing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+}
+
+#startgame {
+    background: #B63A9B;
+
+    margin-top: 50px;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+#top-header {
+    background: #B63A9B;
+    text-align: center;
+    padding: 20px;
+}
+
+#quit {
+    border: white solid;
+    background: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 20px;
+
+    position: absolute;
+    top: 8%;
+    left: 9%;
+    transform: translate(-50%, -60%);
+}
+
+.fas.fa-check-circle {
+    color: #0CA7FF;
+    margin-left: 10px;
+}
+
+#gamecontrol section {
+    display: flex;
+}
+
+.player {
+    width: 600px;
+    height: 530px;
+    text-align: center;
+}
+
+.player h2 {
+    font-size: 32px;
+    color: white;
+}
+
+.followers h3 {
+    font-size: 30px;
+}
+
+.followers h2 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.profile {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#selena {
+    border-right: 1px white inset;
+}
+
+.profile-info {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+
+    margin-left: 50px;
+}
+
+#game {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#overlay {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+
+    width: 40vw;
+    height: 40vh;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#overlay button {
+    background: #0CA7FF;
+    position: absolute;
+    left: 30%;
+    margin-top: -2%;
+}
+
+#overlay h2, #overlay p {
+    text-align: center;
+    color: black;
+}
+
+#overlay p  {
+    font-size: 30px;
+}
+
+#overlay h2 {
+    font-size: 50px;
+}
+
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selena v Hailey</title>
+    <!-- link to normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- link to styles.css -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- link to script.js -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="showing" id="landing">
+        <header>
+            <h1>Selena v Hailey</h1>
+            <h2>Instagram Follower Edition</h2>
+            <h3>Who will reach 20 million followers first?</h3>
+            <p>
+                There are 2 players: Selena and Hailey. more instructions
+            </p>
+            <button id="startgame">Play Game</button>
+        </header>
+
+    </div>
+    
+
+    <div class="hidden" id="gamecontrol">
+        <article id="top-header">
+            <h1>Selena v Hailey</h1>
+            <h3>Who will reach 20 million followers first?</h3>
+            <button id="quit">Wanna Quit?</button> 
+        </article>
+
+        <section>
+            <article id="selena" class="player">
+                <h2>selenagomez<i class="fas fa-check-circle"></i></h2>
+                <article class="profile-info">
+                    <div class="profile"></div>
+                    <article class="followers">
+                        <h2>0</h2>
+                        <h3>Followers</h3>
+                    </article>
+                </article>
+            </article>
+    
+            <article id="hailey" class="player">
+                <h2>haileybieber<i class="fas fa-check-circle"></i></h2>
+                <article class="profile-info">
+                    <div class="profile"></div>
+                    <article class="followers">
+                        <h2>0</h2>
+                        <h3>Followers</h3>
+                    </article>
+                </article>
+            </article>
+        </section>
+
+    </div>
+
+    <div id="game" class="hidden">
+        <section id="overlay">
+            <p>You are playing for</p>
+            <h2 id="player-name">insert player</h2>
+            <button id="follow">Follow</button>
+        </section>
+    </div>
+    <div id="actions" class="hidden"></div>
+    <div id="score" class="hidden"></div>
+
+    <footer>
+        <p>Inspired by Pinterest</p>
+    </footer>
+    
+</body>
+</html>
