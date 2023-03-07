@@ -11,8 +11,6 @@
     const actionArea = document.getElementById('actions');
     const overlay = document.getElementById('overlay');
     const dices = document.getElementById('dice-imgs');
-    const diceOne = document.getElementById('dice-one');
-    const diceTwo = document.getElementById('dice-two');
     const follow = document.getElementById("follow");
     const followAgain = document.getElementById("followagain");
     const pass = document.getElementById('pass');
@@ -27,6 +25,8 @@
             index: 0,
             gameEnd: 29
         };
+
+        
         
         startGame.addEventListener('click', function() {
             //hide landing
@@ -73,8 +73,8 @@
             if (gameData.rollSum === 2) {
                 overlay.className = "showing";
                 console.log("snake eyes were rolled");
-                document.querySelector("#overlay p").innerHTML = "Is it too late now to say SORRY? You got two Justin Bieber ;/";
-                document.querySelector("#overlay h2").innerHTML = '';
+                document.querySelector(".warning").innerHTML = "Is it too late now to say SORRY? You got two Justin Bieber ;/";
+                // document.querySelector("#overlay h2").innerHTML = '';
                 // overlay.className = "showing";
                 // document.getElementById('two-ones').className = "showing";
                 // overlay.innerHTML += '<p>Oh snap! Snake eyes!</p>';
@@ -83,20 +83,22 @@
                 // switch players : if game data index is false = set index to 0 else, set index to 1 
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                 //show the current score
-                setTimeout(setUpTurn, 2000);
+                setUpTurn();
+                // setTimeout(setUpTurn, 1000);
             }
             // if either die is a 1 
             else if (gameData.roll1 === 1 || gameData.roll2 === 1) {
                 overlay.className = "showing";
                 console.log("one of the two dice was a 1");
-                document.querySelector("#overlay p").innerHTML = "SORRY, you got one Justin Bieber.";
-                document.querySelector("#overlay h2").innerHTML = '';
+                document.querySelector(".warning").innerHTML = "SORRY, you got one Justin Bieber.";
+                // document.querySelector("#overlay h2").innerHTML = '';
 
                 // switch player
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                 // document.getElementById('one-ones').className = "showing";
                 // game.innerHTML += `<p>Sorry,, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
-                setTimeout(setUpTurn, 2000);
+                setUpTurn();
+                // setTimeout(setUpTurn, 1000);
             }
             else {
                 console.log("the game proceeds");
