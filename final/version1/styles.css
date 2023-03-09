@@ -69,14 +69,56 @@ footer {
     font-size: 25px;
 }
 
-
-#twenty:hover {
-    cursor: pointer;
-    transform: scale(1.2);
+#twenty img {
+    position: relative;
 }
 
+#twenty img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#preview {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 26%;
+}
 
 /* full view  */
+
+.tag {
+    width: 150px;
+    height: 150px;
+    background-color: #D32D2F;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 45px;
+    top: 65px;
+    transform: rotate(-15deg);
+    z-index: 1;
+}
+
+.tag p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+
+.clothes-tag {
+    background: #FFFFFF;
+    border-radius: 25px;
+    padding: 5px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 #twenty-full {
     background: white;
@@ -95,6 +137,19 @@ footer {
     align-items: center;
 }
 
+#twenty-top {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    z-index: 1;
+}
+
+#twenty-bottom {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    z-index: 1;
+}
 .fas.fa-arrow-left {
     font-size: 36px;
     color: #D32D2F;
@@ -141,7 +196,7 @@ footer {
 
 .story {
     height: 60vh;
-    overflow-y: scroll;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     gap: 100px;

@@ -4,6 +4,16 @@
     "use strict";
     console.log("reading js");
 
+    const story = document.querySelector(".story");
+    const clickTwenty = document.querySelector("#twenty");
+    const navLinks = document.querySelectorAll(".nav-link"); //targets all pieces of clothing to be clicked
+    //declaring variable for all of my area maps of pieces of clothing
+    const twentyOutfit = document.querySelector("#twenty-outfit");
+    const myTop = document.querySelector("#twenty-top");
+    const myPants = document.querySelector("#twenty-bottom");
+    const resetOutfit = document.querySelector("#reset");
+
+
     //go back to landing page
     document.querySelector(".back-button").addEventListener("click", function(e){
         e.preventDefault();
@@ -13,7 +23,6 @@
     });
 
     // go to main story full page
-    const clickTwenty = document.querySelector("#twenty");
     clickTwenty.addEventListener("click", function(e){
         e.preventDefault();
         document.querySelector("#header").className = "hidden";
@@ -21,11 +30,17 @@
         document.querySelector("main").className = "showing";
     });
 
+    clickTwenty.addEventListener("mouseover", function() {
+        document.querySelector('#preview').className = "showing";
+    });
 
-    const story = document.querySelector(".story");
+    clickTwenty.addEventListener("mouseout", function() {
+        document.querySelector('#preview').className = "hidden";
+    });
+
+
 
     //from Javascript scroll effects slides
-    const navLinks = document.querySelectorAll(".nav-link"); //targets all pieces of clothing to be clicked
     navLinks.forEach(function(eachLink) {
         eachLink.addEventListener("click", smoothScroll); //when you click on a piece of clothing, it will call smooth scroll function which shows the story
     });
@@ -35,24 +50,14 @@
         const targetID = event.target.getAttribute("href"); //the id are in the href
         const targetAnchor = document.querySelector(targetID);
 
-        const images = document.getElementById("image").getElementsByTagName("img")
-
-        console.log(images);
-
-
+        // const images = document.getElementById("image").getElementsByTagName("img")
+        // console.log(images);
         //getBoundingClientRect() tells top property of any element in relation to window
         //floor = round; -150 = put element below header
         const originalTop = Math.floor(targetAnchor.getBoundingClientRect().top) - 150;
-
-
         //smooth scroll magic
         story.scrollBy({top: originalTop, left:0, behavior:"smooth" });
     };
-
-    //declaring variable for all of my area maps of pieces of clothing
-    const twentyOutfit = document.querySelector("#twenty-outfit");
-    const myTop = document.querySelector("#twenty-top");
-    const myPants = document.querySelector("#twenty-bottom");
 
     //when you click on any of these pieces of clothing, the handleClick which changes the images to highlight specific piece of clothing is called
     myTop.addEventListener("click", handleClick);
@@ -71,7 +76,9 @@
             //chagne image to highlight pants
             twentyOutfit.src = "images/twenty-pants.jpg";
         }
-        else {
+
+        //need to fix this
+        else if (event.target === resetOutfit) {
             event.preventDefault();
             //reset image back
             twentyOutfit.src = "images/2020.JPG";
@@ -79,24 +86,24 @@
     };
 
     //taken from the Javascript scroll effects too; allows users to also see pieces of clothing through scrolling
-    window.addEventListener("load", function() {
+    // window.addEventListener("load", function() {
 
-        //we're only scrolling the story text part
-        story.addEventListener("scroll", function() {
-        let pageTop = story.scrollTop;
-        // console.log(pageTop);
+    //     //we're only scrolling the story text part
+    //     story.addEventListener("scroll", function() {
+    //     let pageTop = story.scrollTop;
+    //     // console.log(pageTop);
 
-        if (pageTop > 120 && pageTop < 600) {
-            twentyOutfit.src = "images/twenty-top.jpg";
-        }
-        else if (pageTop > 600) {
-            twentyOutfit.src = "images/twenty-pants.jpg";
-        }
-        else {
-            twentyOutfit.src = "images/2020.JPG";
-        }
-        });
-    }); //end of window load
+    //     if (pageTop > 120 && pageTop < 600) {
+    //         twentyOutfit.src = "images/twenty-top.jpg";
+    //     }
+    //     else if (pageTop > 600) {
+    //         twentyOutfit.src = "images/twenty-pants.jpg";
+    //     }
+    //     else {
+    //         twentyOutfit.src = "images/2020.JPG";
+    //     }
+    //     });
+    // }); //end of window load
 
    
 }()); //close iife
