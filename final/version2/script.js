@@ -40,8 +40,21 @@
         story.scrollBy({top: originalTop, left:0, behavior:"smooth" });
     };
 
+    function hidePreview() {
+        document.querySelector("#header").className = "hidden";
+        document.querySelector("#overview").className = "hidden";
+        document.querySelector('main').className = "showing";
+    }
+
     function nineteenFit() {
         const clickNineteen = document.querySelector("#nineteen");
+
+        clickNineteen.addEventListener("click", function(e){
+            e.preventDefault();
+            hidePreview();
+            document.querySelector('#nineteen-full').className = "showing"; //need to fix this still
+
+        });
 
         clickNineteen.addEventListener("mouseover", function() {
             document.querySelector('#nineteen-preview').className = "showing";
@@ -63,12 +76,8 @@
         // go to main story full page
         clickTwenty.addEventListener("click", function(e){
             e.preventDefault();
-            document.querySelector("#header").className = "hidden";
-            document.querySelector("#overview").className = "hidden";
-            document.querySelector('main').className = "showing";
+            hidePreview();
             document.querySelector('#twenty-full').className = "showing";
-            document.querySelector('#twenty-two-full').className = "hidden"; //need to fix this still
-            //change z-index
         });
 
         clickTwenty.addEventListener("mouseover", function() {
@@ -119,6 +128,12 @@
     function twentyOneFit() {
         const clickTwentyOne = document.querySelector("#twenty-one");
 
+        clickTwentyOne.addEventListener("click", function(e){
+            e.preventDefault();
+            hidePreview();
+            document.querySelector('#twenty-one-full').className = "showing"; //need to fix this still
+        });
+
         clickTwentyOne.addEventListener("mouseover", function() {
             document.querySelector('#twenty-one-preview').className = "showing";
         });
@@ -137,9 +152,7 @@
 
         clickTwentyTwo.addEventListener("click", function(e){
             e.preventDefault();
-            document.querySelector("#header").className = "hidden";
-            document.querySelector("#overview").className = "hidden";
-            document.querySelector('main').className = "showing"; //need to fix this still
+            hidePreview();
             document.querySelector('#twenty-two-full').className = "showing"; //need to fix this still
 
         });
@@ -156,6 +169,12 @@
 
     function twentyThreeFit() {
         const clickTwentyThree = document.querySelector("#twenty-three");
+
+        clickTwentyThree.addEventListener("click", function(e){
+            e.preventDefault();
+            hidePreview();
+            document.querySelector('#twenty-three-full').className = "showing"; //need to fix this still
+        });
 
         clickTwentyThree.addEventListener("mouseover", function() {
             document.querySelector('#twenty-three-preview').className = "showing";
