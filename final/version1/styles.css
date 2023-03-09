@@ -69,21 +69,46 @@ footer {
     font-size: 25px;
 }
 
-#twenty img {
-    position: relative;
-}
 
-#twenty img:hover {
+#nineteen img:hover,
+#twenty img:hover, 
+#twenty-one img:hover, 
+#twenty-two img:hover, 
+#twenty-three img:hover {
     opacity: 0.5;
     cursor: pointer;
 }
 
-#preview {
+#nineteen-preview,
+#twenty-preview,
+#twenty-one-preview,
+#twenty-two-preview,
+#twenty-three-preview {
     font-weight: bold;
     position: absolute;
     top: 50%;
+}
+
+#nineteen-preview {
+    left: 8%;
+}
+
+#twenty-preview {
     left: 26%;
 }
+
+#twenty-two-preview {
+    left: 65%;
+}
+
+#twenty-three-preview {
+    left: 83%;
+}
+
+#twenty-one-preview {
+    left: 46.5%;
+}
+
 
 /* full view  */
 
@@ -94,8 +119,8 @@ footer {
     border-radius: 50%;
 
     position: absolute;
-    left: 45px;
-    top: 65px;
+    left: -5%;
+    top: -5%;
     transform: rotate(-15deg);
     z-index: 1;
 }
@@ -106,10 +131,11 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     line-height: 1.5em;
     font-weight: bold;
+    color: white;
 }
 
 .clothes-tag {
@@ -148,6 +174,13 @@ footer {
     position: absolute;
     top: 60%;
     left: 30%;
+    z-index: 1;
+}
+
+#twenty-main {
+    position: absolute;
+    top: 5%;
+    left: 70%;
     z-index: 1;
 }
 .fas.fa-arrow-left {
