@@ -4,7 +4,7 @@
     "use strict";
     console.log("reading js");
 
-    const story = document.querySelector(".story");
+    const story = document.querySelector(".story"); //need to fix .story for others
     const navLinks = document.querySelectorAll(".nav-link"); //targets all pieces of clothing to be clicked
 
     nineteenFit();
@@ -28,11 +28,14 @@
     function smoothScroll(event) {
         event.preventDefault();
         const targetID = event.target.getAttribute("href"); //the id are in the href
+        console.log(targetID);
         const targetAnchor = document.querySelector(targetID);
+        console.log(targetAnchor);
 
         //getBoundingClientRect() tells top property of any element in relation to window
         //floor = round; -150 = put element below header
         const originalTop = Math.floor(targetAnchor.getBoundingClientRect().top) - 150;
+        console.log(originalTop);
         //smooth scroll magic
         story.scrollBy({top: originalTop, left:0, behavior:"smooth" });
     };
