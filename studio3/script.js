@@ -27,8 +27,6 @@
             gameEnd: 21
         };
 
-        
-        
         startGame.addEventListener('click', function() { //when you click play game
             notifSound.play();
             //hide landing
@@ -36,21 +34,40 @@
             gameControl.className = "showing"; //shows the main page
             //randomy set game index here
             gameData.index = Math.round(Math.random()); 
-            console.log(`index: ${gameData.index}`);
+            // console.log(`index: ${gameData.index}`);
 
             //when you exit the game, landing page shows up and score resets
             document.getElementById('quit').addEventListener("click", function(){
                 location.reload();
                 gameControl.className = "hidden";
             });
-            console.log("set up the turn!");
+            // console.log("set up the turn!");
+            setUpTurn();
+        });
+
+        // glenda added the event listeners for followAgain and pass here so they don't keep getting re-created in the followOrPass function
+
+        followAgain.addEventListener('click', function() {
+            // console.log('followagain clicked')
+            beepSound.play();
+            throwDice();  
+        })
+
+        pass.addEventListener('click', function() {
+            beepSound.play();
+            // switch player
+            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+            // hide dice from previous player
+            hideDice();
             setUpTurn();
         });
 
         function showOverlay() {
             hideDice();
+
             //show overlay
             game.className = "showing";
+            
             overlay.className = "showing";
 
             //hide other stuff
@@ -59,9 +76,13 @@
         }
 
         function hideOverlay() {
-            showDice();
+            // glenda commented out showDice; should be called when player clicks "follow"
+            // showDice();
+            
+            // glenda commented out bc we need game to show in order to see the die
+            // game.className = "hidden";
+
             //hide overlay
-            game.className = "hidden";
             overlay.className = "hidden";
 
             //show other stuff
@@ -70,52 +91,41 @@
         }
 
         function showDice() {
-            dices.className = "showing";
+            console.log('showing dice');
+            dices.className = "showingDie";
         };
         function hideDice() {
-            dices.innerHTML = '';
+            console.log('hiding dice');
+            // dices.innerHTML = '';
             dices.className = "hidden";
         };
 
         function setUpTurn() {
             //overlay shows up
-            // setTimeout(showOverlay, 2000);
+            hideDice();
             showOverlay();
             //player name changes to what's chosen
             playerName.innerHTML = `${gameData.players[gameData.index]}`;
-            console.log("roll the dice!");
+            console.log(`Player is : ${gameData.players[gameData.index]}`);
+            // console.log("roll the dice!");
 
             //after 2s, hide overlay to start playing
             setTimeout(hideOverlay, 2000);
+            // glenda commented out showDice, should be called when follow is clicked
+            // showDice();
 
+             // glenda commented out because the event listeners just need to be called one time for your design
             //start playing
-            followOrPass();
+            // followOrPass();
         };
     
-
-        function followOrPass() {
-            //when click on followAgain button, throw dice
-            followAgain.addEventListener('click', function() {
-                console.log('followagain clicked')
-                beepSound.play();
-                throwDice();
-                
-            });
-
-            //when click pass button
-            pass.addEventListener('click', function() {
-                beepSound.play();
-                // switch player
-                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-                setUpTurn();
-            });
-        }; //end followOrPass
+        // glenda commented out and moved the event listeners near the top of the script
 
         
 
         function throwDice() {
             //moved from showDice to throwDice
-            console.log('showDice function')
+            // console.log('showDice function')
             // get random values for 1-6 for the score
             gameData.roll1 = Math.floor(Math.random() * 6) + 1;
             gameData.roll2 = Math.floor(Math.random() * 6) + 1;
@@ -125,15 +135,19 @@
 
             // put the dice images on the screen; the dice array needs to be one less than the random value
             dices.innerHTML = `<img src="${gameData.dice[gameData.roll1-1]}"> <img src="${gameData.dice[gameData.roll2-1]}">`;
-            console.log(dices.innerHTML);
+            console.log(`dices.innerHTML: ${dices.innerHTML}`);
+
+            // glenda added
+            showDice();
             //adds the 2 rolls for total score
             gameData.rollSum = gameData.roll1 + gameData.roll2;
-            console.log(`roll1: ${gameData.roll1}, roll2: ${gameData.roll2}, rollSum: ${gameData.rollSum}`);
+            // console.log(`roll1: ${gameData.roll1}, roll2: ${gameData.roll2}, rollSum: ${gameData.rollSum}`);
             // showDice();
 
             // if two 1's are rolled
             if (gameData.rollSum === 2) {
-                console.log("snake eyes were rolled");
+                // switch players : if game data index is false = set index to 0 else, set index to 1 
+                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                 //show overlay to inform that player is switching
                 showOverlay();
                 //change text
@@ -141,37 +155,38 @@
                 document.querySelector('.now-playing').innerHTML = "Switching to";
                 //resets score to zero
                 gameData.score[gameData.index] = 0;
-                // switch players : if game data index is false = set index to 0 else, set index to 1 
-                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                
                 setTimeout(hideOverlay, 2000);
                 //show the current score
+
                 // glenda commented out
-                // setUpTurn();
+                setUpTurn();
                 // dices.innerHTML = '';
             }
             // if either die is a 1 
             else if (gameData.roll1 === 1 || gameData.roll2 === 1) {
-                // overlay.className = "showing";
-                console.log("one of the two dice was a 1");
+                // switch player
+                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
                 //show overlay to inform that player is switching
                 showOverlay();
                 //change text
                 document.querySelector(".warning").innerHTML = "SORRY, you got one Justin Bieber.";
                 document.querySelector('.now-playing').innerHTML = "Switching to";
-                // switch player
-                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                
                 setTimeout(hideOverlay, 2000);
+
                 // glenda commented out
-                // setUpTurn();
+                setUpTurn();
                 // dices.innerHTML = '';
             }
             else {
                 //continue playing
-                console.log("the game proceeds");
+                // console.log("the game proceeds");
                 //add current score to the total score
                 gameData.score[gameData.index] += gameData.rollSum;
                 //either follow or pass
-                // glenda commented out because the follow click is already being listened for
+
+                // glenda commented out because the followAgain click is already being listened for
                 // followOrPass();
                 setTimeout(checkWinningCondition, 2000);
             }
@@ -184,17 +199,26 @@
             if (gameData.score[gameData.index] > gameData.gameEnd) {
                 //show overlay
                 showOverlay();
+                showCurrentScore();
                 //change text
                 document.querySelector(".warning").innerHTML = '';
                 document.querySelector('.now-playing').innerHTML = '';
                 document.querySelector('#wins').innerHTML = `wins with ${gameData.score[gameData.index]} points!`;
 
-                //change to quit
-                document.getElementById('quit').innerHTML = "Start a New Game?";
                 setTimeout(function(){
                     dices.innerHTML = '';
                 }, 1000);
                 setTimeout(hideOverlay, 2000);
+                setTimeout(function(){
+                    document.getElementById('new-game').className = 'showing';
+                    followAgain.className = "hidden";
+                    pass.className = "hidden";
+                    document.getElementById('quit').className = "hidden";
+                    document.getElementById('new-game').addEventListener('click', function(){
+                        location.reload();
+                    });
+                }, 2000);
+                
                 // setTimeout(showOverlay, 1000);
             }
             else {
@@ -208,9 +232,12 @@
             selenaFollowers.innerHTML = `${gameData.score[0]}M`;
             haileyFollowers.innerHTML = `${gameData.score[1]}M`;
 
+            // glenda suggests hiding dice when the score is showing
+            hideDice();
+
             //only show for dices for 1s
             setTimeout(function(){
-                dices.innerHTML = '';
+                // dices.innerHTML = '';
             }, 1000);
         };
 }());
