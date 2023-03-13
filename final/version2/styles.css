@@ -164,26 +164,7 @@ footer {
     align-items: center;
 }
 
-#twenty-top {
-    position: absolute;
-    top: 35%;
-    left: 35%;
-    z-index: 1;
-}
 
-#twenty-bottom {
-    position: absolute;
-    top: 60%;
-    left: 30%;
-    z-index: 1;
-}
-
-#twenty-main {
-    position: absolute;
-    top: 5%;
-    left: 70%;
-    z-index: 1;
-}
 .fas.fa-arrow-left {
     font-size: 36px;
     color: #D32D2F;
@@ -234,5 +215,41 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 100px;
+}
+
+#nineteen-mains, #twenty-main{
+    position: absolute;
+    top: 5%;
+    left: 70%;
+    z-index: 1;
+}
+
+
+/* 2019 outfit */
+#nineteen-tops {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+}
+
+#nineteen-bottom {
+    position: absolute;
+    top: 90%;
+    left: 40%;
+}
+
+/* 2020 outfit */
+#twenty-top {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    z-index: 1;
+}
+
+#twenty-bottom {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    z-index: 1;
 }
 

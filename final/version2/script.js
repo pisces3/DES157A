@@ -4,7 +4,7 @@
     "use strict";
     console.log("reading js");
 
-    const story = document.querySelector(".story"); //need to fix .story for others
+    const story = document.querySelectorAll(".story"); //need to fix .story for others
     const navLinks = document.querySelectorAll(".nav-link"); //targets all pieces of clothing to be clicked
 
     nineteenFit();
@@ -37,7 +37,9 @@
         const originalTop = Math.floor(targetAnchor.getBoundingClientRect().top) - 150;
         console.log(originalTop);
         //smooth scroll magic
-        story.scrollBy({top: originalTop, left:0, behavior:"smooth" });
+        for (let i = 0; i < story.length; i++) {
+            story[i].scrollBy({top: originalTop, left:0, behavior:"smooth" });
+          };
     };
 
     function hidePreview() {
@@ -48,6 +50,10 @@
 
     function nineteenFit() {
         const clickNineteen = document.querySelector("#nineteen");
+        const nineteenOutfit = document.querySelector("#nineteen-outfit");
+        const nineteenTop = document.querySelector("#nineteen-tops");
+        const nineteenPants = document.querySelector("#nineteen-bottom");
+        const nineteenMain = document.querySelector("#nineteen-mains");
 
         clickNineteen.addEventListener("click", function(e){
             e.preventDefault();
@@ -63,6 +69,42 @@
         clickNineteen.addEventListener("mouseout", function() {
             document.querySelector('#nineteen-preview').className = "hidden";
         });
+        //when you click on any of these pieces of clothing, the handleClick which changes the images to highlight specific piece of clothing is called
+        nineteenTop.addEventListener("click", handleNineteen);
+        nineteenPants.addEventListener("click", handleNineteen);
+        nineteenMain.addEventListener("click", handleNineteen);
+
+        function handleNineteen(event) {
+            event.preventDefault();
+            if (event.target === nineteenTop) {
+                //change image to highlight top
+                nineteenOutfit.src = "images/nineteen-top.jpg";
+                //show bottom and full outfit tags; hide top tag
+                nineteenTop.className = 'clothes-tag nav-link hidden';
+                nineteenMain.className = 'clothes-tag nav-link showing';
+                nineteenPants.className = 'clothes-tag nav-link showing';
+            }
+            else if (event.target === nineteenPants) {
+                event.preventDefault();
+                //chagne image to highlight pants
+                nineteenOutfit.src = "images/nineteen-pants.jpg";
+                //shows full outfit and top tags; hide bottom tags
+                nineteenPants.className = 'clothes-tag nav-link hidden';
+                nineteenMain.className = 'clothes-tag nav-link showing';
+                nineteenTop.className = 'clothes-tag nav-link showing';
+            }
+
+            else if (event.target === nineteenMain) {
+                event.preventDefault();
+                //reset image back
+                nineteenOutfit.src = "images/2019.JPG"
+                //shows top and bottom tags; hide full outfit tag
+                nineteenMain.className = 'clothes-tag nav-link hidden';
+                nineteenTop.className = 'clothes-tag nav-link showing';
+                nineteenPants.className = 'clothes-tag nav-link showing';
+            };
+        }
+
 
     }
 
@@ -99,18 +141,18 @@
                 //change image to highlight top
                 twentyOutfit.src = "images/twenty-top.jpg";
                 //show bottom and full outfit tags; hide top tag
-                document.querySelector('#twenty-top').className = 'clothes-tag nav-link hidden';
-                document.querySelector('#twenty-main').className = 'clothes-tag nav-link showing';
-                document.querySelector('#twenty-bottom').className = 'clothes-tag nav-link showing';
+                myTop.className = 'clothes-tag nav-link hidden';
+                resetOutfit.className = 'clothes-tag nav-link showing';
+                myPants.className = 'clothes-tag nav-link showing';
             }
             else if (event.target === myPants) {
                 event.preventDefault();
                 //chagne image to highlight pants
                 twentyOutfit.src = "images/twenty-pants.jpg";
                 //shows full outfit and top tags; hide bottom tags
-                document.querySelector('#twenty-bottom').className = 'clothes-tag nav-link hidden';
-                document.querySelector('#twenty-main').className = 'clothes-tag nav-link showing';
-                document.querySelector('#twenty-top').className = 'clothes-tag nav-link showing';
+                myPants.className = 'clothes-tag nav-link hidden';
+                resetOutfit.className = 'clothes-tag nav-link showing';
+                myTop.className = 'clothes-tag nav-link showing';
             }
 
             else if (event.target === resetOutfit) {
@@ -118,9 +160,9 @@
                 //reset image back
                 twentyOutfit.src = "images/2020.JPG";
                 //shows top and bottom tags; hide full outfit tag
-                document.querySelector('#twenty-main').className = 'clothes-tag nav-link hidden';
-                document.querySelector('#twenty-top').className = 'clothes-tag nav-link showing';
-                document.querySelector('#twenty-bottom').className = 'clothes-tag nav-link showing';
+                resetOutfit.className = 'clothes-tag nav-link hidden';
+                myTop.className = 'clothes-tag nav-link showing';
+                resetOutfit.className = 'clothes-tag nav-link showing';
             };
         }; //end handleClick function
     } //end of twenty fit
