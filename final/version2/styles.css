@@ -44,6 +44,59 @@ footer {
 
 /* Landing page styles */
 
+#user-test {
+    width: 50vw;
+    height: 50vh;
+    padding: 30px;
+
+    background: white;
+    border-radius: 20px;
+    color: black;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#user-test h1 {
+    text-align: center;
+    color: #D32D2F;
+    font-size: 48px;
+}
+
+#user-test h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 28px;
+}
+
+#user-test h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#user-test ul li {
+    line-height: 1.5em;
+    font-size: 18px;
+}
+
+.fas.fa-times {
+    font-size: 36px;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    cursor: pointer;
+}
+
+.fas.fa-info-circle {
+    font-size: 36px;
+    position: absolute;
+    top: 5.5%;
+    left: 60%;
+    cursor: pointer;
+}
+
 #landing-page {
     display: flex;
     margin-top: 20px;

@@ -20,6 +20,14 @@
         document.querySelector("main").className = "hidden";
     });
 
+    document.querySelector(".overlay").addEventListener("click", function(e) {
+        document.querySelector('#user-test').className = "showing";
+    });
+    
+    document.querySelector(".exit").addEventListener("click", function(e) {
+        document.querySelector('#user-test').className = "hidden";
+    });
+
     //from Javascript scroll effects slides
     navLinks.forEach(function(eachLink) {
         eachLink.addEventListener("click", smoothScroll); //when you click on a piece of clothing, it will call smooth scroll function which shows the story
