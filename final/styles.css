@@ -71,3 +71,52 @@ p, li {
     justify-content: center;
     gap: 400px;
 }
+
+#user-test {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 20%;
+    height: auto;
+    border-radius: 15px;
+}
+
+#images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #D32D2F;
+}
+
+#observation {
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+#ob-title, #plan-title {
+    font-size: 42px;
+}
+
+.description {
+    width: 50vw;
+    background-color: white;
+    color: black;
+}
+
+#plan {
+    background-color: #D32D2F;
+    padding: 20px;
+    width: 100%;
+}
+
+#plan p {
+    margin-top: 10px;
+    width: 80%;
+    line-height: 1.5em;
+}
