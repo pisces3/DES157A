@@ -7,6 +7,28 @@
     const story = document.querySelectorAll(".story"); //need to fix .story for others
     const navLinks = document.querySelectorAll(".nav-link"); //targets all pieces of clothing to be clicked
 
+    const nineteenFull = document.querySelector('#nineteen-full');
+    const twentyFull = document.querySelector('#twenty-full');
+    const twentyOneFull = document.querySelector('#twenty-one-full');
+    const twentyTwoFull = document.querySelector('#twenty-two-full');
+    const twentyThreeFull = document.querySelector('#twenty-three-full');
+
+    const hideTagButton = document.querySelectorAll('.hide-tags');
+
+    const tags = document.querySelectorAll('.clothes-tag');
+
+    function hideTags() {
+        for (let i = 0; i < hideTagButton.length; i++) {
+            hideTagButton[i].addEventListener('click', function() {
+                console.log('clicking hide tag');
+                for (let j = 0; j < tags.length; j++) {
+                    tags[j].className = 'clothes-tag nav-link hidden';
+                }
+            });
+        }
+    };
+    
+
     nineteenFit();
     twentyFit();
     twentyOneFit();
@@ -63,10 +85,15 @@
         const nineteenPants = document.querySelector("#nineteen-bottom");
         const nineteenMain = document.querySelector("#nineteen-mains");
 
+
         clickNineteen.addEventListener("click", function(e){
             e.preventDefault();
             hidePreview();
-            document.querySelector('#nineteen-full').className = "showing"; //need to fix this still
+            nineteenFull.className = "showing";
+            twentyFull.className = "hidden";
+            twentyOneFull.className = "hidden";
+            twentyTwoFull.className = "hidden";
+            twentyThreeFull.className = "hidden";
 
         });
 
@@ -81,6 +108,8 @@
         nineteenTop.addEventListener("click", handleNineteen);
         nineteenPants.addEventListener("click", handleNineteen);
         nineteenMain.addEventListener("click", handleNineteen);
+
+        hideTags();
 
         function handleNineteen(event) {
             event.preventDefault();
@@ -127,7 +156,11 @@
         clickTwenty.addEventListener("click", function(e){
             e.preventDefault();
             hidePreview();
-            document.querySelector('#twenty-full').className = "showing";
+            nineteenFull.className = "hidden";
+            twentyFull.className = "showing";
+            twentyOneFull.className = "hidden";
+            twentyTwoFull.className = "hidden";
+            twentyThreeFull.className = "hidden";
         });
 
         clickTwenty.addEventListener("mouseover", function() {
@@ -170,7 +203,7 @@
                 //shows top and bottom tags; hide full outfit tag
                 resetOutfit.className = 'clothes-tag nav-link hidden';
                 myTop.className = 'clothes-tag nav-link showing';
-                resetOutfit.className = 'clothes-tag nav-link showing';
+                myPants.className = 'clothes-tag nav-link showing';
             };
         }; //end handleClick function
     } //end of twenty fit
@@ -181,7 +214,11 @@
         clickTwentyOne.addEventListener("click", function(e){
             e.preventDefault();
             hidePreview();
-            document.querySelector('#twenty-one-full').className = "showing"; //need to fix this still
+            nineteenFull.className = "hidden";
+            twentyFull.className = "hidden";
+            twentyOneFull.className = "showing";
+            twentyTwoFull.className = "hidden";
+            twentyThreeFull.className = "hidden";
         });
 
         clickTwentyOne.addEventListener("mouseover", function() {
@@ -203,7 +240,11 @@
         clickTwentyTwo.addEventListener("click", function(e){
             e.preventDefault();
             hidePreview();
-            document.querySelector('#twenty-two-full').className = "showing"; //need to fix this still
+            nineteenFull.className = "hidden";
+            twentyFull.className = "hidden";
+            twentyOneFull.className = "hidden";
+            twentyTwoFull.className = "showing";
+            twentyThreeFull.className = "hidden";
 
         });
 
@@ -223,7 +264,11 @@
         clickTwentyThree.addEventListener("click", function(e){
             e.preventDefault();
             hidePreview();
-            document.querySelector('#twenty-three-full').className = "showing"; //need to fix this still
+            nineteenFull.className = "hidden";
+            twentyFull.className = "hidden";
+            twentyOneFull.className = "hidden";
+            twentyTwoFull.className = "hidden";
+            twentyThreeFull.className = "showing";
         });
 
         clickTwentyThree.addEventListener("mouseover", function() {
