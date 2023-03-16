@@ -35,7 +35,6 @@ footer {
 
 .hidden {
     display: none;
-    /* visibility: hidden; */
 }
 
 .showing {
@@ -191,12 +190,27 @@ footer {
     color: white;
 }
 
-.clothes-tag {
+.clothes-tag, .hide-tags{
     background: #FFFFFF;
     border-radius: 25px;
     padding: 5px 20px;
     font-weight: bold;
     cursor: pointer;
+
+    text-decoration: none;
+    color: black;
+}
+
+.clothes-tag:hover, .hide-tags:hover {
+    background: #D32D2F;
+    color: white;
+}
+
+.hide-tags {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    z-index: 1;
 }
 
 
@@ -271,9 +285,10 @@ footer {
 }
 
 #nineteen-mains, #twenty-main, #twenty-one-main{
+    padding: 10px 20px;
     position: absolute;
     top: 5%;
-    left: 70%;
+    left: 60%;
     z-index: 1;
 }
 
