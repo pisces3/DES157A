@@ -13,8 +13,18 @@
     const twentyTwoFull = document.querySelector('#twenty-two-full');
     const twentyThreeFull = document.querySelector('#twenty-three-full');
 
-    const hideTagButton = document.querySelectorAll('.hide-tags');
-    const tags = document.querySelectorAll('.clothes-tag');
+    const fullView = document.querySelectorAll('.full-view');
+
+    // const hideTagButton = document.querySelectorAll('.hide-tags');
+    // const tags = document.querySelectorAll('.clothes-tag');
+
+    // const tagIcon = document.querySelector('.hide-tags i');
+
+    const outfitFits = [nineteenFull, twentyFull, twentyOneFull, twentyTwoFull, twentyThreeFull];
+    const nextButton = document.querySelector('#next');
+    const prevButton = document.querySelector('#previous');
+
+    let currentFit = 0;
 
     outfitFit(
         "#nineteen",
@@ -68,6 +78,19 @@
         "twenty-two-pants"
     );
 
+    outfitFit(
+      "#twenty-three",
+      "#twenty-three-outfit",
+      "#twenty-three-top",
+      "#twenty-three-bottom",
+      "#twenty-three-main",
+      "#twenty-three-preview",
+      "#twenty-three-full",
+      "2023",
+      "twenty-three-top",
+      "twenty-three-pants"
+  );
+
     function hideOthers() {
         nineteenFull.className = "hidden";
         twentyFull.className = "hidden";
@@ -97,10 +120,13 @@
         clickElement.addEventListener("mouseout", function() {
           document.querySelector(previewId).className = "hidden";
         });
+
+
       
         topElement.addEventListener("click", handleClick);
         pantsElement.addEventListener("click", handleClick);
         mainElement.addEventListener("click", handleClick);
+
       
         function handleClick(event) {
           event.preventDefault();
@@ -124,18 +150,38 @@
           }
         }
       }
-      
 
-    function hideTags() {
-        for (let i = 0; i < hideTagButton.length; i++) {
-            hideTagButton[i].addEventListener('click', function() {
-                console.log('clicking hide tag');
-                for (let j = 0; j < tags.length; j++) {
-                    tags[j].className = 'clothes-tag nav-link hidden';
-                }
-            });
+    nextButton.addEventListener('click', nextPhoto);
+    prevButton.addEventListener('click', prevPhoto);
+      
+      function nextPhoto() {
+        hideOthers();
+        // hide current outfitFit
+        outfitFits[currentFit].className = "hidden";
+        
+        currentFit++; // increment counter
+        // set source for slide to next outfit
+        if (currentFit > outfitFits.length - 1) {
+          currentFit = 0;
         }
-    };
+        //show updated outfiFit
+        outfitFits[currentFit].className = "showing";
+      }
+      
+      function prevPhoto() {
+        hideOthers();
+        // hide current outfitFit
+        outfitFits[currentFit].className = "hidden";
+        currentFit--; // decrement counter
+        // set source for slide to previous outfit
+        if (currentFit < 0) {
+          currentFit = outfitFits.length - 1;
+        }
+        //show updated outfiFit
+        outfitFits[currentFit].className = "showing";
+      }
+  
+
       //go back to landing page
     document.querySelector(".back-button").addEventListener("click", function(e){
         e.preventDefault();

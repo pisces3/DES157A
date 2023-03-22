@@ -216,7 +216,7 @@ footer {
 
 .hide-tags {
     position: absolute;
-    top: 25%;
+    top: 5%;
     left: 5%;
     z-index: 1;
 }
@@ -247,6 +247,29 @@ footer {
     left: 50px;
     top: 40px;
     display: inline-block;
+}
+
+.fas.fa-chevron-right {
+    font-size: 42px;
+    color: white;
+
+    position: absolute;
+    right: 3%;
+    top: 50%;
+}
+
+.fas.fa-chevron-left {
+    font-size: 42px;
+    color: white;
+
+    position: absolute;
+    left: 3%;
+    top: 50%;
+}
+
+.fas.fa-chevron-left:hover, .fas.fa-chevron-right:hover {
+    cursor: pointer;
+    color: #D32D2F;
 }
 
 .fas.fa-arrow-left:hover {
@@ -292,7 +315,7 @@ footer {
     gap: 100px;
 }
 
-#nineteen-mains, #twenty-main, #twenty-one-main, #twenty-two-main{
+#nineteen-mains, #twenty-main, #twenty-one-main, #twenty-two-main, #twenty-three-main{
     padding: 10px 20px;
     position: absolute;
     top: 5%;
@@ -357,5 +380,18 @@ footer {
     position: absolute;
     top: 75%;
     left: 40%;
+}
+
+/* 2023 outfit */
+#twenty-three-top {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+
+#twenty-three-bottom {
+    position: absolute;
+    top: 70%;
+    left: 50%;
 }
 
